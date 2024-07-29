@@ -1,1 +1,3 @@
-# amrny_mobile_buyer
+# qixer_customer
+
+A new Flutter project.
