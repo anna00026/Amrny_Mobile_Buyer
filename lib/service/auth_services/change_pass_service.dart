@@ -36,7 +36,7 @@ class ChangePassService with ChangeNotifier {
     var connection = await checkConnection();
     if (connection) {
       setLoadingTrue();
-      if (baseApi.toLowerCase().contains("qixer.bytesed.com")) {
+      if (baseApi.toLowerCase().contains("amrny.com")) {
         await Future.delayed(const Duration(seconds: 2));
         "This feature is turned off for demo app".showToast();
         setLoadingFalse();
@@ -55,7 +55,7 @@ class ChangePassService with ChangeNotifier {
       var data = {'current_password': currentPass, 'new_password': newPass};
 
       setLoadingTrue();
-      if (baseApi == 'https://qixer.bytesed.com/api/v1') {
+      if (baseApi == 'https://amrny.com/api/v1') {
         await Future.delayed(const Duration(seconds: 1));
         OthersHelper()
             .showToast('This feature is turned off in test mode', Colors.black);
