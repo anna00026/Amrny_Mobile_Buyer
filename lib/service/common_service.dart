@@ -4,6 +4,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:qixer/service/app_string_service.dart';
 import 'package:qixer/service/home_services/category_service.dart';
 import 'package:qixer/service/home_services/recent_services_service.dart';
 import 'package:qixer/service/home_services/slider_service.dart';
@@ -81,7 +82,8 @@ runAtstart(BuildContext context) async {
   Provider.of<RtlService>(context, listen: false).fetchCurrency();
   //language direction (ltr or rtl)
 
-  await Provider.of<RtlService>(context, listen: false).fetchDirection(context);
+  // await Provider.of<RtlService>(context, listen: false).fetchDirection(context);
+  await Provider.of<AppStringService>(context, listen: false).loadInitialLanguage(context);
   await Provider.of<ProfileService>(context, listen: false).fetchData();
 //fetch translated strings
   // Provider.of<AppStringService>(context, listen: false)

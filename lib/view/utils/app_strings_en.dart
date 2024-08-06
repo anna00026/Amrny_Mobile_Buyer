@@ -1,4 +1,4 @@
-var appStrings = {
+var appStringsEn = {
   "welcome": "welcome",
   "Browse categories": "Browse categories",
   "All categories": "All categories",
@@ -501,4 +501,7 @@ var appStrings = {
   "View More": "View More",
   "Sign up": "Sign up",
   "I agree to": "I agree to",
+  "Language": "Language",
+  "English": "English",
+  "Arabic": "Arabic",
 };

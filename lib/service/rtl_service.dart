@@ -42,6 +42,7 @@ class RtlService with ChangeNotifier {
   }
 
   fetchDirection(BuildContext context) async {
+    
     if (alreadyRtlLoaded == false) {
       var response = await http.get(Uri.parse('$baseApi/language'));
       print(response.body);
@@ -87,5 +88,11 @@ class RtlService with ChangeNotifier {
     } else {
       //already loaded from server. no need to load again
     }
+  }
+
+  changeDirection(String direction, String locale) {
+    this.direction = direction;
+    langSlug = locale;
+    notifyListeners();
   }
 }

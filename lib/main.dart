@@ -49,7 +49,7 @@ void main() async {
 int? userId;
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,8 @@ class MyApp extends StatelessWidget {
             ],
             supportedLocales: [
               Locale(rtlProvider.langSlug.substring(0, 2)),
-              const Locale('en', "US")
+              const Locale('en', "US"),
+              const Locale('ar', "AR"),
             ],
             builder: (context, rtlchild) {
               return Consumer<RtlService>(

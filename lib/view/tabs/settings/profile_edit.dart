@@ -14,6 +14,7 @@ import 'package:qixer/service/rtl_service.dart';
 import 'package:qixer/view/auth/signup/components/country_states_dropdowns.dart';
 import 'package:qixer/view/auth/signup/signup_helper.dart';
 import 'package:qixer/view/booking/components/textarea_field.dart';
+import 'package:qixer/view/services/components/language_dropdown_helper.dart';
 import 'package:qixer/view/utils/common_helper.dart';
 import 'package:qixer/view/utils/constant_colors.dart';
 import 'package:qixer/view/utils/constant_styles.dart';
@@ -283,7 +284,14 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                         height: 18,
                       ),
 
+                      //dropdown for language
+                      LanguageDropdownHelper().languageDropdown(cc, context),
+
+                      const SizedBox(
+                        height: 18,
+                      ),
                       //dropdowns
+                      
                       const CountryStatesDropdowns(),
 
                       Column(
