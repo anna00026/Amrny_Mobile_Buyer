@@ -42,6 +42,32 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
   TextEditingController aboutController = TextEditingController();
   String? countryCode;
 
+  Map<String, dynamic> profileJson = {};
+  List<String> socialFieldNames = [
+    'fb_url',
+    'tw_url',
+    'go_url',
+    'li_url',
+    'yo_url',
+    'in_url',
+    'dr_url',
+    'twi_url',
+    'pi_url',
+    're_url',
+  ];
+  List<String> socialLabelNames = [
+    'Facebook',
+    'Twitter',
+    'Google',
+    'Linkedin',
+    'Youtube',
+    'Instagram',
+    'Dribble',
+    'Twitch',
+    'Pinterest',
+    'Reddit',
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -72,10 +98,29 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
         .setAreaBasedOnUserProfile(context);
     Provider.of<ProfileEditService>(context, listen: false)
         .setCountryCode(pProvider.profileDetails.userDetails.countryCode);
+    profileJson = Provider.of<ProfileService>(context, listen: false)
+        .profileDetails
+        .toJson()['user_details'];
   }
 
   late AnimationController localAnimationController;
   XFile? pickedImage;
+
+  Widget _getSocialInput(int idx, AppStringService ln) {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const SizedBox(
+        height: 8,
+      ),
+      CommonHelper().labelCommon(ln.getString('${socialLabelNames[idx]} Link')),
+      CustomInput(
+        initialValue: profileJson[socialFieldNames[idx]],
+        hintText: ln.getString('https://www.${socialLabelNames[idx].toLowerCase()}.com/'),
+        textInputAction: TextInputAction.next,
+        onChanged: (val) => profileJson[socialFieldNames[idx]] = val,
+      ),
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     ConstantColors cc = ConstantColors();
@@ -291,7 +336,7 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                         height: 18,
                       ),
                       //dropdowns
-                      
+
                       const CountryStatesDropdowns(),
 
                       Column(
@@ -324,6 +369,24 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                           ),
                         ],
                       ),
+
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            CommonHelper()
+                                .labelCommon(asProvider.getString("Tax Number")),
+                            CustomInput(
+                              initialValue: profileJson['tax_number'],
+                              hintText: asProvider.getString("Enter your tax number"),
+                              textInputAction: TextInputAction.next,
+                              onChanged: (val) => profileJson['tax_number'] = val,
+                            ),
+                          ]),
+                      for (int i = 0; i < socialFieldNames.length; i++)
+                        _getSocialInput(i, asProvider),
 
                       const SizedBox(
                         height: 25,
@@ -386,6 +449,7 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                             addressController.text,
                             aboutController.text,
                             pickedImage?.path,
+                            profileJson,
                             context,
                           );
                           if (result == true || result == false) {
