@@ -60,6 +60,16 @@ class CountryDropdownService with ChangeNotifier {
     notifyListeners();
   }
 
+  Future<String?> fetchDefaultCountry(BuildContext context) async {
+    var response =
+        await http.get(Uri.parse('$baseApi/default_country'));
+    if ((response.statusCode == 200 || response.statusCode == 201) &&
+        jsonDecode(response.body)['default_country']['id'].isNotEmpty) {
+          return jsonDecode(response.body)['default_country']['id'];
+        }
+    return null;
+  }
+
   Future<bool> fetchCountries(BuildContext context,
       {bool isrefresh = false}) async {
     if (countryDropdownList.isNotEmpty) return false;

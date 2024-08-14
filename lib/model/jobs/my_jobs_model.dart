@@ -136,6 +136,7 @@ class Datum {
     this.countryId,
     this.cityId,
     this.title,
+    this.titleAr,
     this.slug,
     this.description,
     this.image,
@@ -156,6 +157,7 @@ class Datum {
   int? countryId;
   int? cityId;
   String? title;
+  String? titleAr;
   String? slug;
   String? description;
   String? image;
@@ -176,6 +178,7 @@ class Datum {
         countryId: json["country_id"],
         cityId: json["city_id"],
         title: json["title"],
+        titleAr: json["title_ar"],
         slug: json["slug"],
         description: json["description"],
         image: json["image"],
@@ -197,6 +200,7 @@ class Datum {
         "country_id": countryId,
         "city_id": cityId,
         "title": title,
+        "title_ar": titleAr,
         "slug": slug,
         "description": description,
         "image": image,

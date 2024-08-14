@@ -131,6 +131,7 @@ class MyJobsService with ChangeNotifier {
       myJobsListMap.add({
         'id': data[i].id,
         'title': data[i].title,
+        'title_ar': data[i].titleAr,
         'isActive': data[i].isJobOn == 1 ? true : false,
         'price': data[i].price,
         'image': imageList[i],

@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:qixer/service/all_services_service.dart';
 import 'package:qixer/service/jobs_service/my_jobs_service.dart';
+import 'package:qixer/service/profile_service.dart';
 import 'package:qixer/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -31,6 +32,7 @@ class CreateJobService with ChangeNotifier {
 
   Future<bool> createJob(BuildContext context,
       {required title,
+      required titleAr,
       required desc,
       required onlineOrOffline,
       required price,
@@ -42,15 +44,10 @@ class CreateJobService with ChangeNotifier {
     var selectedSubCategoryId =
         Provider.of<AllServicesService>(context, listen: false)
             .selectedSubcatId;
-
-    var selectedCountryId =
-        Provider.of<CountryDropdownService>(context, listen: false)
-            .selectedCountryId;
+    String? selectedCountryId = await Provider.of<CountryDropdownService>(context, listen: false).fetchDefaultCountry(context);
     var selectedStateId =
-        Provider.of<StateDropdownService>(context, listen: false)
-            .selectedStateId;
-    var selectedAreaId =
-        Provider.of<AreaDropdownService>(context, listen: false).selectedAreaId;
+        Provider.of<ProfileService>(context, listen: false)
+            .profileDetails.userDetails.city;
 
     if (pickedImage == null) {
       OthersHelper()
@@ -82,6 +79,7 @@ class CreateJobService with ChangeNotifier {
       'country_id': selectedCountryId,
       'city_id': selectedStateId,
       'title': title,
+      'title_ar': titleAr,
       'description': desc,
       'is_job_online': isOnline,
       'price': price,

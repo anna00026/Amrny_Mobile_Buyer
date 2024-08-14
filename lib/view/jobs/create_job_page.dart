@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qixer/service/app_string_service.dart';
+import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
 import 'package:qixer/service/jobs_service/create_job_service.dart';
 import 'package:qixer/view/booking/components/textarea_field.dart';
 import 'package:qixer/view/jobs/components/create_job_image_upload.dart';
@@ -30,6 +31,7 @@ class _CreateJobPageState extends State<CreateJobPage> {
   int selectedIndex = 0;
 
   final titleController = TextEditingController();
+  final titleArController = TextEditingController();
   final budgetController = TextEditingController();
   final descController = TextEditingController();
 
@@ -146,6 +148,27 @@ class _CreateJobPageState extends State<CreateJobPage> {
                       textInputAction: TextInputAction.next,
                       maxLength: 190,
                     ),
+
+                    
+                    sizedBoxCustom(20),
+
+                    // Title
+                    //============>
+                    CommonHelper().labelCommon(asProvider.getString("Arabic Title")),
+
+                    CustomInput(
+                      controller: titleArController,
+                      validation: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter an Arabic title';
+                        }
+                        return null;
+                      },
+                      hintText: asProvider.getString("Arabic Title"),
+                      paddingHorizontal: 15,
+                      textInputAction: TextInputAction.next,
+                      maxLength: 190,
+                    ),
                     sizedBoxCustom(20),
 
                     // Title
@@ -243,6 +266,7 @@ class _CreateJobPageState extends State<CreateJobPage> {
                       if (_formKey.currentState!.validate()) {
                         provider.createJob(context,
                             title: titleController.text,
+                            titleAr: titleArController.text,
                             desc: descController.text,
                             onlineOrOffline: selectedIndex,
                             price: budgetController.text,

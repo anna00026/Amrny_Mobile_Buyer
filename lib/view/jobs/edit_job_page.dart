@@ -44,6 +44,9 @@ class _EditJobPageState extends State<EditJobPage> {
     titleController.text = Provider.of<MyJobsService>(context, listen: false)
         .myJobsListMap[widget.jobIndex]['title'];
 
+    titleArController.text = Provider.of<MyJobsService>(context, listen: false)
+        .myJobsListMap[widget.jobIndex]['title_ar'];
+
     budgetController.text = Provider.of<MyJobsService>(context, listen: false)
         .myJobsListMap[widget.jobIndex]['price']
         .toString();
@@ -77,6 +80,7 @@ class _EditJobPageState extends State<EditJobPage> {
   int selectedIndex = 0;
 
   final titleController = TextEditingController();
+  final titleArController = TextEditingController();
   final budgetController = TextEditingController();
   final descController = TextEditingController();
 
@@ -217,6 +221,26 @@ class _EditJobPageState extends State<EditJobPage> {
                         paddingHorizontal: 15,
                         textInputAction: TextInputAction.next,
                       ),
+
+                      sizedBoxCustom(20),
+
+                      // Title
+                      //============>
+                      CommonHelper()
+                          .labelCommon(asProvider.getString("Arabic Title")),
+
+                      CustomInput(
+                        controller: titleArController,
+                        validation: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter an Arabic title';
+                          }
+                          return null;
+                        },
+                        hintText: asProvider.getString("Arabic Title"),
+                        paddingHorizontal: 15,
+                        textInputAction: TextInputAction.next,
+                      ),
                       sizedBoxCustom(20),
 
                       // Title
@@ -334,6 +358,7 @@ class _EditJobPageState extends State<EditJobPage> {
                         if (_formKey.currentState!.validate()) {
                           provider.editJob(context,
                               title: titleController.text,
+                              titleAr: titleArController.text,
                               desc: descController.text,
                               onlineOrOffline: selectedIndex,
                               price: budgetController.text,

@@ -513,6 +513,8 @@ var appStringsEn = {
   "Pinterest Link": "Pinterest Link",
   "Reddit Link": "Reddit Link",
   "Enter your tax number": "Enter your tax number",
+  "Please enter a Arabic title": "Please enter a Arabic title",
+  "Arabic Title": "Arabic Title",
   "Language": "Language",
   "English": "English",
   "Arabic": "Arabic",

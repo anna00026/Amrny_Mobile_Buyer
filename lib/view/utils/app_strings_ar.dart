@@ -476,6 +476,8 @@ var appStringsAr = {
   "Pinterest Link": "رابط بينتيريست",
   "Reddit Link": "رابط ريديت",
   "Enter your tax number": "أدخل رقم الضريبة الخاص بك",
+  "Please enter an Arabic title": "يرجى إدخال عنوان باللغة العربية",
+  "Arabic Title": "العنوان بالعربية",
   "Language": "اللغة",
   "English": "الإنجليزية",
   "Arabic": "العربية",
