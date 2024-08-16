@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:qixer/service/app_string_service.dart';
 import 'package:qixer/service/common_service.dart';
 import 'package:qixer/service/home_services/top_rated_services_service.dart';
 import 'package:qixer/service/service_details_service.dart';
@@ -21,100 +22,94 @@ class TopRatedServices extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<TopRatedServicesSerivce>(
-      builder: (context, provider, child) => provider.topServiceMap.isNotEmpty
-          ? provider.topServiceMap[0] != 'error'
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    SectionTitle(
-                      cc: cc,
-                      title: asProvider.getString('Top booked services'),
-                      pressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                const TopAllServicePage(),
-                          ),
-                        );
-                      },
-                    ),
-                    const SizedBox(
-                      height: 18,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 5),
-                      height: 194,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        clipBehavior: Clip.none,
-                        children: [
-                          for (int i = 0;
-                              i < provider.topServiceMap.length;
-                              i++)
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute<void>(
-                                    builder: (BuildContext context) =>
-                                        const ServiceDetailsPage(),
-                                  ),
-                                );
-                                Provider.of<ServiceDetailsService>(context,
-                                        listen: false)
-                                    .fetchServiceDetails(
-                                        provider.topServiceMap[i]['serviceId']);
-                              },
-                              child: ServiceCard(
-                                cc: cc,
-                                imageLink: provider.topServiceMap[i]['image'] ??
-                                    placeHolderUrl,
-                                rating: twoDouble(
-                                    provider.topServiceMap[i]['rating']),
-                                title: provider.topServiceMap[i]['title'],
-                                sellerName: provider.topServiceMap[i]
-                                    ['sellerName'],
-                                price: provider.topServiceMap[i]['price'],
-                                buttonText: 'Book Now',
-                                width: MediaQuery.of(context).size.width - 85,
-                                marginRight: 17.0,
-                                pressed: () {
-                                  provider.saveOrUnsave(
-                                      provider.topServiceMap[i]['serviceId'],
-                                      provider.topServiceMap[i]['title'],
-                                      provider.topServiceMap[i]['image'],
-                                      provider.topServiceMap[i]['price'],
-                                      provider.topServiceMap[i]['sellerName'],
-                                      twoDouble(
-                                          provider.topServiceMap[i]['rating']),
-                                      i,
-                                      context,
-                                      provider.topServiceMap[i]['sellerId']);
-                                },
-                                isSaved:
-                                    provider.topServiceMap[i]['isSaved'] == true
-                                        ? true
-                                        : false,
-                                serviceId: provider.topServiceMap[i]
-                                    ['serviceId'],
-                                sellerId: provider.topServiceMap[i]['sellerId'],
-                              ),
-                            )
-                        ],
+    return Consumer<AppStringService>(
+      builder: (context, asProvider, child) =>
+          Consumer<TopRatedServicesSerivce>(
+        builder: (context, provider, child) => provider.topServiceMap.isNotEmpty
+            ? provider.topServiceMap[0] != 'error'
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 25,
                       ),
-                    ),
-                  ],
-                )
-              : Text(asProvider.getString('Something went wrong'))
-          : Container(),
+                      SectionTitle(
+                        cc: cc,
+                        title: asProvider.getString('Top booked services'),
+                        pressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const TopAllServicePage(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(
+                        height: 18,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 5),
+                        height: 194,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          clipBehavior: Clip.none,
+                          children: [
+                            for (var service in provider.topServiceMap)
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute<void>(
+                                      builder: (BuildContext context) =>
+                                          const ServiceDetailsPage(),
+                                    ),
+                                  );
+                                  Provider.of<ServiceDetailsService>(context,
+                                          listen: false)
+                                      .fetchServiceDetails(
+                                          service['serviceId']);
+                                },
+                                child: ServiceCard(
+                                  cc: cc,
+                                  imageLink: service['image'] ?? placeHolderUrl,
+                                  rating: twoDouble(service['rating']),
+                                  title: asProvider.currentLanguage == 'English' ? service['title'] : service['title_ar'],
+                                  sellerName: service['sellerName'],
+                                  price: service['price'],
+                                  buttonText: 'Book Now',
+                                  width: MediaQuery.of(context).size.width - 85,
+                                  marginRight: 17.0,
+                                  pressed: () {
+                                    provider.saveOrUnsave(
+                                        service['serviceId'],
+                                        service['title'],
+                                        service['image'],
+                                        service['price'],
+                                        service['sellerName'],
+                                        twoDouble(service['rating']),
+                                        provider.topServiceMap.indexOf(service),
+                                        context,
+                                        service['sellerId']);
+                                  },
+                                  isSaved:
+                                      service['isSaved'] == true ? true : false,
+                                  serviceId: service['serviceId'],
+                                  sellerId: service['sellerId'],
+                                ),
+                              )
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                : Text(asProvider.getString('Something went wrong'))
+            : Container(),
+      ),
     );
   }
 }

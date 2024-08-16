@@ -48,6 +48,7 @@ class LatestService {
   LatestService({
     this.id,
     this.title,
+    this.titleAr,
     this.image,
     this.price,
     this.sellerId,
@@ -57,6 +58,7 @@ class LatestService {
 
   int? id;
   String? title;
+  String? titleAr;
   String? image;
   var price;
   int? sellerId;
@@ -66,6 +68,7 @@ class LatestService {
   factory LatestService.fromJson(Map<String, dynamic> json) => LatestService(
         id: json["id"],
         title: json["title"],
+        titleAr: json["title_ar"],
         image: json["image"],
         price: json["price"],
         sellerId: json["seller_id"],
@@ -77,6 +80,7 @@ class LatestService {
   Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,
+        "title_ar": titleAr,
         "image": image,
         "price": price,
         "seller_id": sellerId,

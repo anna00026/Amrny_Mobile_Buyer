@@ -53,6 +53,7 @@ class TopRatedServicesSerivce with ChangeNotifier {
             setServiceList(
                 data.topServices[i].id,
                 data.topServices[i].title,
+                data.topServices[i].titleAr,
                 data.topServices[i].sellerForMobile.name,
                 data.topServices[i].price,
                 averageRate,
@@ -74,10 +75,11 @@ class TopRatedServicesSerivce with ChangeNotifier {
   }
 
   setServiceList(
-      serviceId, title, sellerName, price, rating, image, index, sellerId) {
+      serviceId, title, titleAr, sellerName, price, rating, image, index, sellerId) {
     topServiceMap.add({
       'serviceId': serviceId,
       'title': title,
+      'title_ar': titleAr,
       'sellerName': sellerName,
       'price': price,
       'rating': rating,

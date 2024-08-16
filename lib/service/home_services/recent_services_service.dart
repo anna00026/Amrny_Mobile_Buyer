@@ -64,6 +64,7 @@ class RecentServicesService with ChangeNotifier {
             setServiceList(
                 data.latestServices[i].id,
                 data.latestServices[i].title,
+                data.latestServices[i].titleAr,
                 data.latestServices[i].sellerForMobile.name,
                 data.latestServices[i].price,
                 averageRate,
@@ -86,10 +87,11 @@ class RecentServicesService with ChangeNotifier {
   }
 
   setServiceList(
-      serviceId, title, sellerName, price, rating, image, index, sellerId) {
+      serviceId, title, titleAr, sellerName, price, rating, image, index, sellerId) {
     recentServiceMap.add({
       'serviceId': serviceId,
       'title': title,
+      'title_ar': titleAr,
       'sellerName': sellerName,
       'price': price,
       'rating': rating,

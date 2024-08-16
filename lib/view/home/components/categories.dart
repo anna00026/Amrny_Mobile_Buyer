@@ -32,7 +32,7 @@ class Categories extends StatelessWidget {
                             i < provider.categories.category.length;
                             i++)
                           CategoryCard(
-                            name: provider.categories.category[i].name,
+                            name: asProvider.currentLanguage == 'English' ? provider.categories.category[i].name : provider.categories.category[i].nameAr,
                             id: provider.categories.category[i].id,
                             cc: cc,
                             index: i,

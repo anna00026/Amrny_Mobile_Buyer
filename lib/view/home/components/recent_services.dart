@@ -69,9 +69,7 @@ class RecentServices extends StatelessWidget {
                             shrinkWrap: true,
                             clipBehavior: Clip.none,
                             children: [
-                              for (int i = 0;
-                                  i < provider.recentServiceMap.length;
-                                  i++)
+                              for (var service in provider.recentServiceMap)
                                 InkWell(
                                   splashColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
@@ -85,53 +83,44 @@ class RecentServices extends StatelessWidget {
                                     );
                                     Provider.of<ServiceDetailsService>(context,
                                             listen: false)
-                                        .fetchServiceDetails(provider
-                                            .recentServiceMap[i]['serviceId']);
+                                        .fetchServiceDetails(
+                                            service['serviceId']);
                                   },
                                   child: ServiceCard(
                                     cc: cc,
-                                    imageLink: provider.recentServiceMap[i]
-                                            ['image'] ??
-                                        placeHolderUrl,
-                                    rating: twoDouble(
-                                        provider.recentServiceMap[i]['rating']),
-                                    title: provider.recentServiceMap[i]
-                                        ['title'],
-                                    sellerName: provider.recentServiceMap[i]
-                                        ['sellerName'],
-                                    price: provider.recentServiceMap[i]
-                                        ['price'],
+                                    imageLink:
+                                        service['image'] ?? placeHolderUrl,
+                                    rating: twoDouble(service['rating']),
+                                    title:
+                                        asProvider.currentLanguage == 'English'
+                                            ? service['title']
+                                            : service['title_ar'],
+                                    sellerName: service['sellerName'],
+                                    price: service['price'],
                                     buttonText: 'Book Now',
                                     width:
                                         MediaQuery.of(context).size.width - 85,
                                     marginRight: 17.0,
                                     pressed: () {
                                       // print(
-                                      //     'service id is ${provider.recentServiceMap[i]['serviceId']}');
+                                      //     'service id is ${service['serviceId']}');
                                       provider.saveOrUnsave(
-                                          provider.recentServiceMap[i]
-                                              ['serviceId'],
-                                          provider.recentServiceMap[i]['title'],
-                                          provider.recentServiceMap[i]['image'],
-                                          provider.recentServiceMap[i]['price'],
-                                          provider.recentServiceMap[i]
-                                              ['sellerName'],
-                                          twoDouble(provider.recentServiceMap[i]
-                                              ['rating']),
-                                          i,
+                                          service['serviceId'],
+                                          asProvider.currentLanguage == 'English' ? service['title'] : service['title_ar'],
+                                          service['image'],
+                                          service['price'],
+                                          service['sellerName'],
+                                          twoDouble(service['rating']),
+                                          provider.recentServiceMap
+                                              .indexOf(service),
                                           context,
-                                          provider.recentServiceMap[i]
-                                              ['sellerId']);
+                                          service['sellerId']);
                                     },
-                                    isSaved: provider.recentServiceMap[i]
-                                                ['isSaved'] ==
-                                            true
+                                    isSaved: service['isSaved'] == true
                                         ? true
                                         : false,
-                                    serviceId: provider.recentServiceMap[i]
-                                        ['serviceId'],
-                                    sellerId: provider.recentServiceMap[i]
-                                        ['sellerId'],
+                                    serviceId: service['serviceId'],
+                                    sellerId: service['sellerId'],
                                   ),
                                 )
                             ],
