@@ -13,6 +13,7 @@ class PersonalizationService with ChangeNotifier {
 
   List includedList = [];
   List extrasList = [];
+  List<TaskOption> optionsList = [];
   var tax = 0.0;
 
   int defaultprice = 0;
@@ -50,6 +51,7 @@ class PersonalizationService with ChangeNotifier {
   setToDefault(BuildContext context) {
     includedList = [];
     extrasList = [];
+    optionsList = [];
     notifyListeners();
     //make total price to default
     // Provider.of<BookService>(context, listen: false).defaultTotalPrice();
@@ -177,6 +179,7 @@ class PersonalizationService with ChangeNotifier {
             'selected': false
           });
         }
+        optionsList = data.service.taskOptions ?? [];
         serviceExtraData = data;
         // var data = ServiceDetailsModel.fromJson(jsonDecode(response.body));
 

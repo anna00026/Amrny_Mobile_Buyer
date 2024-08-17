@@ -92,7 +92,7 @@ class RtlService with ChangeNotifier {
 
   changeDirection(String direction, String locale) {
     this.direction = direction;
-    langSlug = locale;
+    langSlug = locale == 'en' ? 'en_US' : 'ar_AR';
     notifyListeners();
   }
 }

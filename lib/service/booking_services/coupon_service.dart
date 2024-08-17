@@ -9,6 +9,7 @@ import 'package:qixer/view/utils/others_helper.dart';
 
 class CouponService with ChangeNotifier {
   double couponDiscount = 0;
+  double subscriptionDiscount = 0;
 
   var appliedCoupon;
 
@@ -28,6 +29,48 @@ class CouponService with ChangeNotifier {
     couponDiscount = 0;
     appliedCoupon = '';
     notifyListeners();
+  }
+
+  Future<bool> getSubscriptionDiscount(totalAmount, BuildContext context) async {
+    var connection = await checkConnection();
+    if (connection) {
+      setLoadingTrue();
+      var data = jsonEncode({
+        'total_amount': totalAmount
+      });
+      var header = {
+        //if header type is application/json then the data should be in jsonEncode method
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      };
+
+      var response = await http.post(
+          Uri.parse('$baseApi/service-list/subscription-discount'),
+          body: data,
+          headers: header);
+
+      if (response.statusCode == 201) {
+        subscriptionDiscount = jsonDecode(response.body)['coupon_amount'];
+        appliedCoupon = 'subscription';
+        print('subscription discount amount is $subscriptionDiscount');
+
+        Provider.of<BookConfirmationService>(context, listen: false)
+            .caculateTotalAfterCouponApplied(subscriptionDiscount);
+
+        setLoadingFalse();
+        notifyListeners();
+        return true;
+      } else {
+        //something went wrong
+        print(response.body);
+        setLoadingFalse();
+        OthersHelper().showToast('Please enter a valid coupon', Colors.black);
+        return false;
+      }
+    } else {
+      //internet off
+      return false;
+    }
   }
 
   Future<bool> getCouponDiscount(

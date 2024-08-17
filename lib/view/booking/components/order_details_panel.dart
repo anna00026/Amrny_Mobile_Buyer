@@ -34,6 +34,7 @@ class _OrderDetailsPanelState extends State<OrderDetailsPanel>
       builder: (context, bcProvider, child) {
         if (loadingFirstTime) {
           bcProvider.calculateTotal(
+              context,
               Provider.of<PersonalizationService>(context, listen: false).tax,
               Provider.of<PersonalizationService>(context, listen: false)
                   .includedList,
@@ -260,17 +261,22 @@ class _OrderDetailsPanelState extends State<OrderDetailsPanel>
                                           : Container(),
 
                                       //tax
-                                      BookingHelper().detailsPanelRow(
-                                          lnProvider.getString('Tax') +
-                                              '(+) ${pProvider.tax}%',
-                                          0,
-                                          bcProvider
-                                              .calculateTax(
-                                                pProvider.tax,
-                                                pProvider.includedList,
-                                                pProvider.extrasList,
-                                              )
-                                              .toString()),
+                                      Consumer<CouponService>(
+                                        builder: (context, couponService,
+                                                child) =>
+                                            BookingHelper().detailsPanelRow(
+                                                lnProvider.getString('Tax') +
+                                                    '(+) ${pProvider.tax}%',
+                                                0,
+                                                bcProvider
+                                                    .calculateTax(
+                                                        pProvider.tax,
+                                                        pProvider.includedList,
+                                                        pProvider.extrasList,
+                                                        couponService
+                                                            .couponDiscount)
+                                                    .toStringAsFixed(2)),
+                                      ),
                                       Container(
                                         margin: const EdgeInsets.only(
                                             top: 15, bottom: 12),

@@ -53,20 +53,20 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     startInitialization(context);
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: cc.primaryColor,
         body: Container(
           height: MediaQuery.of(context).size.height,
           width: double.infinity,
           alignment: Alignment.center,
-          decoration: const BoxDecoration(
-            color: Colors.white,
+          decoration: BoxDecoration(
+            color: cc.primaryColor,
           ),
           // color: ConstantColors().primaryColor,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 40,
+                height: 60,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -74,15 +74,8 @@ class _SplashScreenState extends State<SplashScreen> {
                         fit: BoxFit.fitHeight)),
               ),
               const SizedBox(height: 24),
-              OthersHelper().showLoading(ConstantColors().primaryColor),
+              OthersHelper().showLoading(Colors.white),
               const SizedBox(height: 24),
-              Text(
-                appVersion,
-                style: TextStyle(
-                    fontSize: 14,
-                    color: ConstantColors().greyFour,
-                    fontWeight: FontWeight.w600),
-              )
             ],
           ),
         ));

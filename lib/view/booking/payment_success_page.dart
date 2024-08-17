@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:qixer/service/app_string_service.dart';
 import 'package:qixer/service/book_confirmation_service.dart';
 import 'package:qixer/service/booking_services/book_service.dart';
+import 'package:qixer/service/booking_services/coupon_service.dart';
 import 'package:qixer/service/booking_services/personalization_service.dart';
 import 'package:qixer/service/rtl_service.dart';
 import 'package:qixer/view/booking/booking_helper.dart';
@@ -184,16 +185,20 @@ class _PaymentSuccessPageState extends State<PaymentSuccessPage> {
                                         ],
                                       )
                                     : Container(),
-                                BookingHelper().detailsPanelRow(
+                                Consumer<CouponService>(
+                                  builder: (context, couponService, child) =>
+                                      BookingHelper().detailsPanelRow(
                                     '${asProvider.getString('Tax')}(+) ${pProvider.tax}%',
                                     0,
                                     bcProvider
                                         .calculateTax(
-                                          pProvider.tax,
-                                          pProvider.includedList,
-                                          pProvider.extrasList,
-                                        )
-                                        .toString()),
+                                            pProvider.tax,
+                                            pProvider.includedList,
+                                            pProvider.extrasList,
+                                            couponService.couponDiscount)
+                                        .toStringAsFixed(2),
+                                  ),
+                                ),
 
                                 Container(
                                   margin:

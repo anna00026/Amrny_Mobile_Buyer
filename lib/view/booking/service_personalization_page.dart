@@ -7,6 +7,7 @@ import 'package:qixer/service/booking_services/personalization_service.dart';
 import 'package:qixer/service/booking_services/shedule_service.dart';
 import 'package:qixer/service/common_service.dart';
 import 'package:qixer/view/booking/components/extras.dart';
+import 'package:qixer/view/booking/components/task_options.dart';
 import 'package:qixer/view/booking/delivery_address_page.dart.dart';
 import 'package:qixer/view/booking/service_schedule_page.dart';
 import 'package:qixer/view/utils/common_helper.dart';
@@ -37,6 +38,78 @@ class _ServicePersonalizationPageState
     super.initState();
   }
 
+  Widget _getPersonalizationWidget(
+      PersonalizationService provider, AppStringService asProvider) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: screenPadding,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          provider.isOnline == 0 ? Steps(cc: cc) : Container(),
+
+          provider.serviceExtraData.service.isServiceOnline != 1
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CommonHelper().titleCommon(
+                        '${asProvider.getString('What is included')}:'),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Included(
+                      cc: cc,
+                      data: provider.includedList,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                )
+              : Container(),
+
+          provider.extrasList.isNotEmpty
+              ? Extras(
+                  cc: cc,
+                  additionalServices: provider.extrasList,
+                  serviceBenefits:
+                      provider.serviceExtraData.service.serviceBenifit,
+                  asProvider: asProvider,
+                )
+              : Container(),
+
+          // button ==================>
+          const SizedBox(
+            height: 27,
+          ),
+
+          provider.optionsList.isNotEmpty
+              ? TaskOptions(
+                  cc: cc,
+                  taskOptions: provider.optionsList,
+                  asProvider: asProvider,
+                )
+              : Container(),
+
+          // CommonHelper().buttonOrange("Next", () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute<void>(
+          //       builder: (BuildContext context) =>
+          //           const ServiceSchedulePage(),
+          //     ),
+          //   );
+          // }),
+
+          const SizedBox(
+            height: 147,
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     ConstantColors cc = ConstantColors();
@@ -65,73 +138,10 @@ class _ServicePersonalizationPageState
                     builder: (context, provider, child) => provider.isloading ==
                             false
                         ? provider.serviceExtraData != 'error'
-                            ? Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: screenPadding,
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    provider.isOnline == 0
-                                        ? Steps(cc: cc)
-                                        : Container(),
-
-                                    provider.serviceExtraData.service
-                                                .isServiceOnline !=
-                                            1
-                                        ? Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              CommonHelper().titleCommon(
-                                                  '${asProvider.getString('What is included')}:'),
-                                              const SizedBox(
-                                                height: 20,
-                                              ),
-                                              Included(
-                                                cc: cc,
-                                                data: provider.includedList,
-                                              ),
-                                              const SizedBox(
-                                                height: 20,
-                                              ),
-                                            ],
-                                          )
-                                        : Container(),
-
-                                    provider.extrasList.isNotEmpty
-                                        ? Extras(
-                                            cc: cc,
-                                            additionalServices:
-                                                provider.extrasList,
-                                            serviceBenefits: provider
-                                                .serviceExtraData
-                                                .service
-                                                .serviceBenifit,
-                                            asProvider: asProvider,
-                                          )
-                                        : Container(),
-
-                                    // button ==================>
-                                    const SizedBox(
-                                      height: 27,
-                                    ),
-                                    // CommonHelper().buttonOrange("Next", () {
-                                    //   Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute<void>(
-                                    //       builder: (BuildContext context) =>
-                                    //           const ServiceSchedulePage(),
-                                    //     ),
-                                    //   );
-                                    // }),
-
-                                    const SizedBox(
-                                      height: 147,
-                                    ),
-                                  ],
-                                ))
-                            : Text(asProvider.getString('Something went wrong'))
+                            ? _getPersonalizationWidget(provider, asProvider)
+                            : Text(
+                                asProvider.getString('Something went wrong'),
+                              )
                         : Container(
                             height: MediaQuery.of(context).size.height - 250,
                             alignment: Alignment.center,
