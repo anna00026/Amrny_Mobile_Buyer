@@ -329,9 +329,6 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                         height: 18,
                       ),
 
-                      //dropdown for language
-                      LanguageDropdownHelper().languageDropdown(cc, context),
-
                       const SizedBox(
                         height: 18,
                       ),

@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:qixer/service/app_string_service.dart';
 import 'package:qixer/service/profile_service.dart';
 import 'package:qixer/view/booking/booking_helper.dart';
+import 'package:qixer/view/services/components/language_dropdown_helper.dart';
 import 'package:qixer/view/utils/common_helper.dart';
+import 'package:qixer/view/utils/constant_colors.dart';
 import 'package:qixer/view/utils/constant_styles.dart';
 
 class MenuPersonalInfoSection extends StatelessWidget {
@@ -55,8 +57,9 @@ class MenuPersonalInfoSection extends StatelessWidget {
                           'null',
                           asProvider.getString("Address"),
                           profileProvider.profileDetails.userDetails.address ??
-                              '',
-                          lastBorder: false),
+                              ''),
+                      //dropdown for language
+                      LanguageDropdownHelper().languageDropdown(cc, context),
                     ]),
               )),
     );

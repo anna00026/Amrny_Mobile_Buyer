@@ -31,8 +31,7 @@ class AppStringService with ChangeNotifier {
   }
 
   fetchTranslatedStrings(BuildContext context, {bool doNotLoad = false}) async {
-    //if already loaded. no need to load again
-    // var connection = await checkConnection();
+    
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (doNotLoad) {
       final strings = prefs.getString('translated_string');
@@ -40,38 +39,42 @@ class AppStringService with ChangeNotifier {
       return;
     }
     tStrings = currentLanguage == 'English' ? appStringsEn : appStringsAr;
-    // if (connection) {
+    //if already loaded. no need to load again
+    var connection = await checkConnection();
+    if (connection) {
 
-    //   // setLoadingTrue();
+      setLoadingTrue();
 
-    //   // var data = jsonEncode({
-    //   //   "strings": jsonEncode(currentLanguage == 'English' ? appStrings : appStringsAr),
-    //   // });
+      var data = jsonEncode({
+        "lang": currentLanguage == 'English' ? 'en' : 'ar',
+      });
 
-    //   // var header = {
-    //   //   //if header type is application/json then the data should be in jsonEncode method
-    //   //   // "Accept": "application/json",
-    //   //   "Content-Type": "application/json",
-    //   //   // "Authorization": "Bearer $token",
-    //   // };
+      var header = {
+        //if header type is application/json then the data should be in jsonEncode method
+        // "Accept": "application/json",
+        "Content-Type": "application/json",
+        // "Authorization": "Bearer $token",
+      };
+      var response = await http.post(Uri.parse('$baseApi/translate-string'),
+          headers: header, body: data);
 
-    //   // log(jsonEncode(currentLanguage == 'English' ? appStrings : appStringsAr).toString());
-    //   // var response = await http.post(Uri.parse('$baseApi/translate-string'),
-    //   //     headers: header, body: data);
-
-    //   // try {
-    //   //   if (response.statusCode == 201) {
-    //   //     debugPrint(response.body.toString());
-    //   //     tStrings = jsonDecode(response.body)['strings'];
-    //   //     prefs.setString('translated_string', jsonEncode(tStrings));
-    //   //     notifyListeners();
-    //   //   } else {
-    //   //     print('error fetching translations ${response.body}');
-    //   //   }
-    //   // } catch (e) {
-    //   //   debugPrint(e.toString());
-    //   // }
-    // }
+      try {
+        if (response.statusCode == 201) {
+          debugPrint(response.body.toString());
+          var tStrings1 = jsonDecode(response.body)['strings'];
+          tStrings = {
+            ...tStrings,
+            ...tStrings1
+          };
+          prefs.setString('translated_string', jsonEncode(tStrings));
+          notifyListeners();
+        } else {
+          print('error fetching translations ${response.body}');
+        }
+      } catch (e) {
+        debugPrint(e.toString());
+      }
+    }
   }
 
   getString(String staticString) {

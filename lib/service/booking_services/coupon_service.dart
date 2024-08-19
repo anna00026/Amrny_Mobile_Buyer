@@ -64,7 +64,6 @@ class CouponService with ChangeNotifier {
         //something went wrong
         print(response.body);
         setLoadingFalse();
-        OthersHelper().showToast('Please enter a valid coupon', Colors.black);
         return false;
       }
     } else {

@@ -74,6 +74,13 @@ class AmountDetails extends StatelessWidget {
 
                     Container(
                       child: BookingHelper().bRow(
+                          'null',
+                          asProvider.getString(provider.orderDetails.couponCode == 'subscription' ? 'Discount' : 'Coupon'),
+                          provider.orderDetails.couponAmount.toString()),
+                    ),
+
+                    Container(
+                      child: BookingHelper().bRow(
                         'null',
                         asProvider.getString('Payment status'),
                         asProvider

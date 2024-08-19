@@ -501,7 +501,7 @@ var appStringsEn = {
   "View More": "View More",
   "Sign up": "Sign up",
   "I agree to": "I agree to",
-  "Tax Number": "Tax Number", 
+  "Tax Number": "Tax Number",
   "Facebook Link": "Facebook Link",
   "Twitter Link": "Twitter Link",
   "Google Link": "Google Link",
@@ -515,6 +515,15 @@ var appStringsEn = {
   "Enter your tax number": "Enter your tax number",
   "Please enter a Arabic title": "Please enter a Arabic title",
   "Arabic Title": "Arabic Title",
+  "House Cleaning Service": "House Cleaning Service",
+  "Repairing Services": "Repairing Services",
+  "Home Shifting Service": "Home Shifting Service",
+  "Get house cleaning services from expert cleaners":
+      "Get house cleaning services from expert cleaners",
+  "Get repaired anything from our thousands of experts":
+      "Get repaired anything from our thousands of experts",
+  "Take our home shifting service to get best service":
+      "Take our home shifting service to get best service",
   "Language": "Language",
   "English": "English",
   "Arabic": "Arabic",

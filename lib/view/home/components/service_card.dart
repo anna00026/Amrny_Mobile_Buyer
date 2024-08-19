@@ -7,6 +7,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:qixer/service/app_string_service.dart';
 import 'package:qixer/service/booking_services/book_service.dart';
+import 'package:qixer/service/booking_services/coupon_service.dart';
 import 'package:qixer/service/rtl_service.dart';
 import 'package:qixer/view/booking/service_personalization_page.dart';
 import 'package:qixer/view/utils/responsive.dart';
@@ -164,6 +165,11 @@ class ServiceCard extends StatelessWidget {
                       Provider.of<PersonalizationService>(context,
                               listen: false)
                           .fetchServiceExtra(serviceId, context);
+                      Provider.of<CouponService>(context, listen: false)
+                          .getSubscriptionDiscount(
+                              Provider.of<BookService>(context, listen: false)
+                                  .totalPrice,
+                              context);
                       Navigator.push(
                           context,
                           PageTransition(

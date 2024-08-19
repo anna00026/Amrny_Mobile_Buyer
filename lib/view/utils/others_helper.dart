@@ -10,7 +10,7 @@ import '../../service/app_string_service.dart';
 
 //===========================>
 
-String siteLink = 'https://amrny.com';
+String siteLink = 'https://amrny.com'; //'http://94.232.246.234'; 
 
 String get baseApi => '$siteLink/api/v1';
 
