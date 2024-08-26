@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
         builder: (context, rtlProvider, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Qixer',
+            title: 'Amrny',
             localizationsDelegates: const [
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
