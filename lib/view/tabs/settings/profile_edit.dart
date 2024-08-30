@@ -75,12 +75,9 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
             .profileDetails
             .userDetails
             .countryCode ??
-        "ES";
-    //set country code
-    Future.delayed(const Duration(milliseconds: 600), () {
-      Provider.of<ProfileEditService>(context, listen: false)
-          .setCountryCode(countryCode);
-    });
+        defaultCountryCode;
+    Provider.of<ProfileEditService>(context, listen: false)
+        .setCountryCode(countryCode);
     final pProvider = Provider.of<ProfileService>(context, listen: false);
     fullNameController.text = pProvider.profileDetails.userDetails.name ?? '';
     emailController.text = pProvider.profileDetails.userDetails.email ?? '';
@@ -96,8 +93,6 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
         .setStateBasedOnUserProfile(context);
     Provider.of<AreaDropdownService>(context, listen: false)
         .setAreaBasedOnUserProfile(context);
-    Provider.of<ProfileEditService>(context, listen: false)
-        .setCountryCode(pProvider.profileDetails.userDetails.countryCode);
     profileJson = Provider.of<ProfileService>(context, listen: false)
         .profileDetails
         .toJson()['user_details'];
@@ -114,7 +109,8 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
       CommonHelper().labelCommon(ln.getString('${socialLabelNames[idx]} Link')),
       CustomInput(
         initialValue: profileJson[socialFieldNames[idx]],
-        hintText: ln.getString('https://www.${socialLabelNames[idx].toLowerCase()}.com/'),
+        hintText: ln.getString(
+            'https://www.${socialLabelNames[idx].toLowerCase()}.com/'),
         textInputAction: TextInputAction.next,
         onChanged: (val) => profileJson[socialFieldNames[idx]] = val,
       ),
@@ -299,6 +295,9 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                               textAlign: rtlP.direction == 'ltr'
                                   ? TextAlign.left
                                   : TextAlign.right,
+                              onCountryChanged: (country) {
+                                provider.setCountryCode(country.code);
+                              },
                               onChanged: (phone) {
                                 provider.setCountryCode(phone.countryISOCode);
                                 phoneController.text = phone.completeNumber;
@@ -373,13 +372,15 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                             const SizedBox(
                               height: 8,
                             ),
-                            CommonHelper()
-                                .labelCommon(asProvider.getString("Tax Number")),
+                            CommonHelper().labelCommon(
+                                asProvider.getString("Tax Number")),
                             CustomInput(
                               initialValue: profileJson['tax_number'],
-                              hintText: asProvider.getString("Enter your tax number"),
+                              hintText:
+                                  asProvider.getString("Enter your tax number"),
                               textInputAction: TextInputAction.next,
-                              onChanged: (val) => profileJson['tax_number'] = val,
+                              onChanged: (val) =>
+                                  profileJson['tax_number'] = val,
                             ),
                           ]),
                       for (int i = 0; i < socialFieldNames.length; i++)

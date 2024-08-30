@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:qixer/service/app_string_service.dart';
+import 'package:qixer/service/auth_services/signup_service.dart';
+import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
 import 'package:qixer/service/home_services/category_service.dart';
 import 'package:qixer/service/home_services/recent_services_service.dart';
 import 'package:qixer/service/home_services/slider_service.dart';
@@ -79,7 +81,8 @@ removeDollar(value) {
 }
 
 runAtstart(BuildContext context) async {
-  Provider.of<RtlService>(context, listen: false).fetchCurrency();
+  Provider.of<RtlService>(context, listen: false).fetchCurrency();await Provider.of<CountryDropdownService>(context, listen: false).fetchDefaultCountry();  
+  Provider.of<SignupService>(context, listen: false).setCountryCode(defaultCountryCode);  
   //language direction (ltr or rtl)
 
   // await Provider.of<RtlService>(context, listen: false).fetchDirection(context);

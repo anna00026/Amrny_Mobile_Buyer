@@ -32,10 +32,9 @@ class _SplashScreenState extends State<SplashScreen> {
   startInitialization(BuildContext context) async {
     await runAtstart(context);
     initializeLNProvider(context);
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool? intro = prefs.getBool('intro');
-    debugPrint(intro.toString());
-    if (intro == null) {
+    SharedPreferences prefs = await SharedPreferences.getInstance();    
+    String? token = prefs.getString('token');
+    if (token == null) {
       //that means user is opening the app for the first time.. so , show the intro
       Future.delayed(const Duration(microseconds: 2), () {
         Navigator.pushReplacement<void, void>(
@@ -46,6 +45,13 @@ class _SplashScreenState extends State<SplashScreen> {
         );
       });
       return;
+    } else {
+        Navigator.pushReplacement<void, void>(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => const LandingPage(),
+          ),
+        );
     }
     context.toUntilPage(const LandingPage());
   }

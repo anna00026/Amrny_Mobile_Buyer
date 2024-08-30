@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ProfileEditService with ChangeNotifier {
   bool isloading = false;
 
-  String countryCode = 'BD';
+  String countryCode = 'SA';
 
   setCountryCode(code) {
     countryCode = code ?? countryCode;

@@ -11,6 +11,7 @@ import 'package:qixer/service/auth_services/login_service.dart';
 import 'package:qixer/view/auth/login/login_helper.dart';
 import 'package:qixer/view/auth/reset_password/reset_pass_email_page.dart';
 import 'package:qixer/view/auth/signup/signup.dart';
+import 'package:qixer/view/home/landing_page.dart';
 import 'package:qixer/view/services/components/language_dropdown_helper.dart';
 import 'package:qixer/view/utils/common_helper.dart';
 import 'package:qixer/view/utils/constant_colors.dart';

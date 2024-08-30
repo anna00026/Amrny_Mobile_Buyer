@@ -7,6 +7,7 @@ import 'package:qixer/helper/extension/string_extension.dart';
 import 'package:qixer/service/common_service.dart';
 import 'package:qixer/service/profile_service.dart';
 import 'package:qixer/service/push_notification_service.dart';
+import 'package:qixer/view/home/landing_page.dart';
 import 'package:qixer/view/utils/constant_colors.dart';
 import 'package:qixer/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -101,12 +102,12 @@ class LoginService with ChangeNotifier {
         //============>
 
         // =======>
-        // Navigator.pushReplacement<void, void>(
-        //   context,
-        //   MaterialPageRoute<void>(
-        //     builder: (BuildContext context) => const LandingPage(),
-        //   ),
-        // );
+        Navigator.pushReplacement<void, void>(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => const LandingPage(),
+          ),
+        );
         setLoadingFalse();
 
         return true;

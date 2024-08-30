@@ -7,13 +7,14 @@ import 'package:qixer/model/dropdown_models/country_dropdown_model.dart';
 import 'package:qixer/service/profile_service.dart';
 import 'package:qixer/view/utils/others_helper.dart';
 
-var defaultId = '0';
+String defaultCountryId = '0';
+String defaultCountryCode = 'SA';
 
 class CountryDropdownService with ChangeNotifier {
   var countryDropdownList = [];
   var countryDropdownIndexList = [];
   dynamic selectedCountry = 'Select Country';
-  dynamic selectedCountryId = defaultId;
+  dynamic selectedCountryId = defaultCountryId;
 
   bool isLoading = false;
   late int totalPages;
@@ -56,18 +57,20 @@ class CountryDropdownService with ChangeNotifier {
     countryDropdownList = [];
     countryDropdownIndexList = [];
     selectedCountry = 'Select Country';
-    selectedCountryId = defaultId;
+    selectedCountryId = defaultCountryId;
     notifyListeners();
   }
 
-  Future<String?> fetchDefaultCountry(BuildContext context) async {
+  Future<String?> fetchDefaultCountry() async {
     var response =
         await http.get(Uri.parse('$baseApi/default_country'));
     if ((response.statusCode == 200 || response.statusCode == 201) &&
-        jsonDecode(response.body)['default_country']['id'].isNotEmpty) {
-          return jsonDecode(response.body)['default_country']['id'];
+        jsonDecode(response.body)['default_country']['id'] != null) {
+          defaultCountryCode = jsonDecode(response.body)['default_country']['country_code'] ?? 'SA';
+          defaultCountryId = jsonDecode(response.body)['default_country']['id'].toString();
+          return defaultCountryCode;
         }
-    return null;
+    return 'SA';
   }
 
   Future<bool> fetchCountries(BuildContext context,
@@ -106,9 +109,9 @@ class CountryDropdownService with ChangeNotifier {
       } else {
         //error fetching data
         countryDropdownList.add('Select Country');
-        countryDropdownIndexList.add(defaultId);
+        countryDropdownIndexList.add(defaultCountryId);
         selectedCountry = 'Select Country';
-        selectedCountryId = defaultId;
+        selectedCountryId = defaultCountryId;
         notifyListeners();
 
         return false;
@@ -135,7 +138,7 @@ class CountryDropdownService with ChangeNotifier {
             .profileDetails
             .userDetails
             .countryId ??
-        defaultId;
+        defaultCountryId;
 
     Future.delayed(const Duration(milliseconds: 500), () {
       notifyListeners();
@@ -189,9 +192,9 @@ class CountryDropdownService with ChangeNotifier {
     } else {
       //error fetching data
       countryDropdownList.add('Select Country');
-      countryDropdownIndexList.add(defaultId);
+      countryDropdownIndexList.add(defaultCountryId);
       selectedCountry = 'Select Country';
-      selectedCountryId = defaultId;
+      selectedCountryId = defaultCountryId;
       notifyListeners();
 
       return false;

@@ -52,7 +52,7 @@ class EditJobService with ChangeNotifier {
         Provider.of<AllServicesService>(context, listen: false)
             .selectedSubcatId;
 
-    String? selectedCountryId = await Provider.of<CountryDropdownService>(context, listen: false).fetchDefaultCountry(context);
+    String? selectedCountryId = defaultCountryId;
     var selectedStateId =
         Provider.of<ProfileService>(context, listen: false)
             .profileDetails.userDetails.city;

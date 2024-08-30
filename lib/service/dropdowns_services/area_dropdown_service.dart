@@ -15,7 +15,7 @@ class AreaDropdownService with ChangeNotifier {
   var areaDropdownList = [];
   var areaDropdownIndexList = [];
   dynamic selectedArea = 'Select Area';
-  dynamic selectedAreaId = defaultId;
+  dynamic selectedAreaId = '0';
 
   late int totalPages;
 
@@ -35,7 +35,7 @@ class AreaDropdownService with ChangeNotifier {
     areaDropdownList = [];
     areaDropdownIndexList = [];
     selectedArea = 'Select Area';
-    selectedAreaId = defaultId;
+    selectedAreaId = '0';
 
     currentPage = 1;
     notifyListeners();
@@ -78,7 +78,7 @@ class AreaDropdownService with ChangeNotifier {
             .userDetails
             .area
             ?.id ??
-        defaultId;
+        '0';
     // Future.delayed(const Duration(milliseconds: 500), () {
     //   notifyListeners();
     // });
@@ -121,9 +121,9 @@ class AreaDropdownService with ChangeNotifier {
       return true;
     } else {
       areaDropdownList.add('Select Area');
-      areaDropdownIndexList.add(defaultId);
+      areaDropdownIndexList.add('0');
       selectedArea = 'Select Area';
-      selectedAreaId = defaultId;
+      selectedAreaId = '0';
       notifyListeners();
       return false;
     }
@@ -194,9 +194,9 @@ class AreaDropdownService with ChangeNotifier {
       return true;
     } else {
       areaDropdownList.add('Select Area');
-      areaDropdownIndexList.add(defaultId);
+      areaDropdownIndexList.add('0');
       selectedArea = 'Select Area';
-      selectedAreaId = defaultId;
+      selectedAreaId = '0';
       notifyListeners();
       return false;
     }
