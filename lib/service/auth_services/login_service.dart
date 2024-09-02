@@ -100,14 +100,14 @@ class LoginService with ChangeNotifier {
         await Provider.of<ProfileService>(context, listen: false).fetchData();
         //start stripe
         //============>
-
-        // =======>
-        Navigator.pushReplacement<void, void>(
-          context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const LandingPage(),
-          ),
-        );
+        
+        // // =======>
+        // Navigator.pushReplacement<void, void>(
+        //   context,
+        //   MaterialPageRoute<void>(
+        //     builder: (BuildContext context) => const LandingPage(),
+        //   ),
+        // );
         setLoadingFalse();
 
         return true;

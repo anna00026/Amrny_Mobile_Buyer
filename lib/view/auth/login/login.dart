@@ -297,6 +297,7 @@ class _LoginPageState extends State<LoginPage> {
                                     .then((value) {
                                   if (value == true) {
                                     context.popTrue;
+                                    context.toUntilPage(const LandingPage());
                                   }
                                 });
 

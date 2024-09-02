@@ -46,14 +46,9 @@ class _SplashScreenState extends State<SplashScreen> {
       });
       return;
     } else {
-        Navigator.pushReplacement<void, void>(
-          context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const LandingPage(),
-          ),
-        );
+        
+      context.toUntilPage(const LandingPage());
     }
-    context.toUntilPage(const LandingPage());
   }
 
   @override
