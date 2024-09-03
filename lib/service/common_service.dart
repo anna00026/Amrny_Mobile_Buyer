@@ -31,6 +31,13 @@ Future<bool> checkConnection() async {
   }
 }
 
+formatDate(inputDate) {
+  var outputFormat = DateFormat('MM/dd/yyyy');
+  var outputDate = outputFormat.format(inputDate);
+
+  return outputDate;
+}
+
 twoDouble(double value) {
   return double.parse(value.toStringAsFixed(1));
 }
