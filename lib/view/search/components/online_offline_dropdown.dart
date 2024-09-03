@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/searchbar_with_dropdown_service.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/searchbar_with_dropdown_service.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class OnlineOfflineDropdown extends StatelessWidget {
   const OnlineOfflineDropdown({

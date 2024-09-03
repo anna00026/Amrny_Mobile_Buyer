@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/booking_services/book_service.dart';
-import 'package:qixer/service/booking_services/coupon_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/booking/booking_helper.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/booking_services/book_service.dart';
+import 'package:amrny/service/booking_services/coupon_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/booking/booking_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class PaymentSuccessPage extends StatefulWidget {
   const PaymentSuccessPage({super.key, required this.paymentStatus});

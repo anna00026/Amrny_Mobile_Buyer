@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/book_steps_service.dart';
-import 'package:qixer/service/dropdowns_services/area_dropdown_service.dart';
-import 'package:qixer/service/dropdowns_services/state_dropdown_services.dart';
-import 'package:qixer/view/auth/signup/components/country_states_dropdowns.dart';
-import 'package:qixer/view/booking/delivery_address_page.dart.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/book_steps_service.dart';
+import 'package:amrny/service/dropdowns_services/area_dropdown_service.dart';
+import 'package:amrny/service/dropdowns_services/state_dropdown_services.dart';
+import 'package:amrny/view/auth/signup/components/country_states_dropdowns.dart';
+import 'package:amrny/view/booking/delivery_address_page.dart.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../../service/dropdowns_services/country_dropdown_service.dart';
 import 'components/steps.dart';

@@ -4,11 +4,11 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/utils/app_strings_en.dart';
-import 'package:qixer/view/utils/app_strings_ar.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/utils/app_strings_en.dart';
+import 'package:amrny/view/utils/app_strings_ar.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppStringService with ChangeNotifier {

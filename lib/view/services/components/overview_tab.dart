@@ -3,9 +3,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:qixer/view/services/components/desc_from_html.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/services/components/desc_from_html.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../service_helper.dart';
 

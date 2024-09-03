@@ -1,12 +1,12 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/jobs_service/job_conversation_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/jobs_service/job_conversation_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/responsive.dart';

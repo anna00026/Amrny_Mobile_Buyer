@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
-import 'package:qixer/service/filter_services_service.dart';
-import 'package:qixer/view/home/homepage_helper.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
+import 'package:amrny/service/filter_services_service.dart';
+import 'package:amrny/view/home/homepage_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../home/components/home_app_bar.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/rtl_service.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/rtl_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../service/common_service.dart';

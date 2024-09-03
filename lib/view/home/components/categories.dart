@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/home_services/category_service.dart';
-import 'package:qixer/view/home/categories/components/category_card.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/home_services/category_service.dart';
+import 'package:amrny/view/home/categories/components/category_card.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class Categories extends StatelessWidget {
   const Categories({

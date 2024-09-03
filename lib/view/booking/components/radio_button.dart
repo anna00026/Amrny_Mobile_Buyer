@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class RadioButton extends StatefulWidget {
   final List<Map<String, dynamic>> options;

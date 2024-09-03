@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/view/auth/login/login.dart';
-import 'package:qixer/view/auth/reset_password/reset_pass_otp_page.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/view/auth/login/login.dart';
+import 'package:amrny/view/auth/reset_password/reset_pass_otp_page.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class ResetPasswordService with ChangeNotifier {
   bool isloading = false;

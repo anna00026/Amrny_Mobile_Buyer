@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class HireJobSuccessPage extends StatefulWidget {
   const HireJobSuccessPage({

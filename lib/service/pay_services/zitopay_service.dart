@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/service/payment_gateway_list_service.dart';
-import 'package:qixer/service/wallet_service.dart';
-import 'package:qixer/view/payments/zitopay_payment_page.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/service/payment_gateway_list_service.dart';
+import 'package:amrny/service/wallet_service.dart';
+import 'package:amrny/view/payments/zitopay_payment_page.dart';
 
 class ZitopayService {
   payByZitopay(BuildContext context,

@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/service/auth_services/email_verify_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/dropdowns_services/area_dropdown_service.dart';
-import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
-import 'package:qixer/service/dropdowns_services/state_dropdown_services.dart';
-import 'package:qixer/view/auth/signup/components/email_verify_page.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/auth_services/email_verify_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/dropdowns_services/area_dropdown_service.dart';
+import 'package:amrny/service/dropdowns_services/country_dropdown_service.dart';
+import 'package:amrny/service/dropdowns_services/state_dropdown_services.dart';
+import 'package:amrny/view/auth/signup/components/email_verify_page.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class SignupService with ChangeNotifier {
   int selectedPage = 0;

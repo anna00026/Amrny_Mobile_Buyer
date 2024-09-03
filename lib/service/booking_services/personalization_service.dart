@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/model/service_extra_model.dart';
-import 'package:qixer/service/booking_services/book_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/service_extra_model.dart';
+import 'package:amrny/service/booking_services/book_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class PersonalizationService with ChangeNotifier {
   var serviceExtraData;

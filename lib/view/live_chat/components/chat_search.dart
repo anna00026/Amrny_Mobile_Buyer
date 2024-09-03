@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/live_chat/chat_list_service.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/live_chat/chat_list_service.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class ChatSearch extends StatelessWidget {
   const ChatSearch({super.key});

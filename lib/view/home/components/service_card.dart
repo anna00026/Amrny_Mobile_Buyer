@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/booking_services/book_service.dart';
-import 'package:qixer/service/booking_services/coupon_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/booking/service_personalization_page.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/booking_services/book_service.dart';
+import 'package:amrny/service/booking_services/coupon_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/booking/service_personalization_page.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../../../service/booking_services/personalization_service.dart';
 import '../../utils/common_helper.dart';

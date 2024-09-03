@@ -6,11 +6,11 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/notifier_providers.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/themes/default_themes.dart';
-import 'package:qixer/view/home/homepage_helper.dart';
-import 'package:qixer/view/intro/splash.dart';
+import 'package:amrny/service/notifier_providers.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/themes/default_themes.dart';
+import 'package:amrny/view/home/homepage_helper.dart';
+import 'package:amrny/view/intro/splash.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {

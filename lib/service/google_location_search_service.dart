@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/model/google_place_details_model.dart';
-import 'package:qixer/model/google_places_model.dart';
+import 'package:amrny/model/google_place_details_model.dart';
+import 'package:amrny/model/google_places_model.dart';
 
 import '../view/utils/others_helper.dart';
 

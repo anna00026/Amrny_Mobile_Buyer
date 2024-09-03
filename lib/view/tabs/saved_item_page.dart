@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/saved_items_service.dart';
-import 'package:qixer/view/home/components/service_card.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/saved_items_service.dart';
+import 'package:amrny/view/home/components/service_card.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class SavedItemPage extends StatefulWidget {
   const SavedItemPage({super.key});

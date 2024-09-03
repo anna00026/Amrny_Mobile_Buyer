@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/model/recent_service_model.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/db/db_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/recent_service_model.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/db/db_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class RecentServicesService with ChangeNotifier {
   var recentServiceMap = [];

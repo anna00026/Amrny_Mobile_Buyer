@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/auth_services/delete_account_service.dart';
-import 'package:qixer/service/auth_services/logout_service.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/custom_input.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/auth_services/delete_account_service.dart';
+import 'package:amrny/service/auth_services/logout_service.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/custom_input.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../../service/auth_services/facebook_login_service.dart';

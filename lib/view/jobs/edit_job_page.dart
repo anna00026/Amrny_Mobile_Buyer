@@ -3,18 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/jobs_service/edit_job_service.dart';
-import 'package:qixer/service/jobs_service/my_jobs_service.dart';
-import 'package:qixer/view/booking/components/textarea_field.dart';
-import 'package:qixer/view/jobs/components/edit_job_image_upload.dart';
-import 'package:qixer/view/jobs/components/job_create_dropdowns.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/custom_input.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/jobs_service/edit_job_service.dart';
+import 'package:amrny/service/jobs_service/my_jobs_service.dart';
+import 'package:amrny/view/booking/components/textarea_field.dart';
+import 'package:amrny/view/jobs/components/edit_job_image_upload.dart';
+import 'package:amrny/view/jobs/components/job_create_dropdowns.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/custom_input.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class EditJobPage extends StatefulWidget {
   const EditJobPage({

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/tabs/settings/components/settings_page_grid.dart';
-import 'package:qixer/view/tabs/settings/profile_edit.dart';
-import 'package:qixer/view/tabs/settings/settings_helper.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/tabs/settings/components/settings_page_grid.dart';
+import 'package:amrny/view/tabs/settings/profile_edit.dart';
+import 'package:amrny/view/tabs/settings/settings_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
 
 class MenuNameImageSection extends StatelessWidget {
   const MenuNameImageSection({super.key});

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/model/service_extra_model.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/booking/components/radio_button.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/model/service_extra_model.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/booking/components/radio_button.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class TaskOptions extends StatelessWidget {
   const TaskOptions({

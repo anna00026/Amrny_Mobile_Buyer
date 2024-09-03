@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
 
 import '../view/utils/constant_colors.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/country_states_service.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/custom_input.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/country_states_service.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/custom_input.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class AreaDropdownPopup extends StatelessWidget {
   // var countryId;

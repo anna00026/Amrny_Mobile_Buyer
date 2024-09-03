@@ -5,8 +5,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/payment_gateway_list_service.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/payment_gateway_list_service.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:http/http.dart' as http;
 
@@ -157,14 +157,14 @@ class SquareUpPayment extends StatelessWidget {
     final response = await http.post(url,
         headers: header,
         body: jsonEncode({
-          "description": "Qixer payment",
+          "description": "Amrny payment",
           "idempotency_key": DateTime.now().toString(),
           "quick_pay": {
             "location_id": locationId,
-            "name": "Qixer payment",
+            "name": "Amrny payment",
             "price_money": {"amount": amount, "currency": currencyCode}
           },
-          "payment_note": "Qixer payment",
+          "payment_note": "Amrny payment",
           "redirect_url": "https://xgenious.com/",
           "pre_populated_data": {"buyer_email": email}
         }));

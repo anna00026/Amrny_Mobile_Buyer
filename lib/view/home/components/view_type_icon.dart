@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:qixer/view/home/homepage_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/view/home/homepage_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class ViewTypeIcon extends StatelessWidget {
   const ViewTypeIcon({

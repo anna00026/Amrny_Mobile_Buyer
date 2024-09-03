@@ -2,11 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/all_services_service.dart';
-import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
-import 'package:qixer/service/jobs_service/my_jobs_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/all_services_service.dart';
+import 'package:amrny/service/dropdowns_services/country_dropdown_service.dart';
+import 'package:amrny/service/jobs_service/my_jobs_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../dropdowns_services/area_dropdown_service.dart';

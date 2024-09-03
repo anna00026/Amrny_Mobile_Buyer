@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/model/slider_model.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/slider_model.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class SliderService with ChangeNotifier {
   List<Map> sliderDetailsList = [];

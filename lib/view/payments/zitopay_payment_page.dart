@@ -4,10 +4,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/service/wallet_service.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/service/wallet_service.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../utils/common_helper.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/view/booking/booking_helper.dart';
-import 'package:qixer/view/utils/common_helper.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/view/booking/booking_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
 
 class SellerDetails extends StatelessWidget {
   const SellerDetails({super.key});

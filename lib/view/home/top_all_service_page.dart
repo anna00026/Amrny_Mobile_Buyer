@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/home_services/top_all_services_service.dart';
-import 'package:qixer/service/service_details_service.dart';
-import 'package:qixer/view/services/service_details_page.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/home_services/top_all_services_service.dart';
+import 'package:amrny/service/service_details_service.dart';
+import 'package:amrny/view/services/service_details_page.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../home/components/service_card.dart';
 

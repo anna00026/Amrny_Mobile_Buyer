@@ -2,31 +2,31 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/service/pay_services/billplz_service.dart';
-import 'package:qixer/service/pay_services/cashfree_service.dart';
-import 'package:qixer/service/pay_services/cinetpay_service.dart';
-import 'package:qixer/service/pay_services/flutterwave_service.dart';
-import 'package:qixer/service/pay_services/instamojo_service.dart';
-import 'package:qixer/service/pay_services/mercado_pago_service.dart';
-import 'package:qixer/service/pay_services/midtrans_service.dart';
-import 'package:qixer/service/pay_services/mollie_service.dart';
-import 'package:qixer/service/pay_services/payfast_service.dart';
-import 'package:qixer/service/pay_services/paypal_service.dart';
-import 'package:qixer/service/pay_services/paystack_service.dart';
-import 'package:qixer/service/pay_services/paytabs_service.dart';
-import 'package:qixer/service/pay_services/paytm_service.dart';
-import 'package:qixer/service/pay_services/razorpay_service.dart';
-import 'package:qixer/service/pay_services/square_service.dart';
-import 'package:qixer/service/pay_services/stripe_service.dart';
-import 'package:qixer/service/pay_services/zitopay_service.dart';
-import 'package:qixer/service/wallet_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/service/pay_services/billplz_service.dart';
+import 'package:amrny/service/pay_services/cashfree_service.dart';
+import 'package:amrny/service/pay_services/cinetpay_service.dart';
+import 'package:amrny/service/pay_services/flutterwave_service.dart';
+import 'package:amrny/service/pay_services/instamojo_service.dart';
+import 'package:amrny/service/pay_services/mercado_pago_service.dart';
+import 'package:amrny/service/pay_services/midtrans_service.dart';
+import 'package:amrny/service/pay_services/mollie_service.dart';
+import 'package:amrny/service/pay_services/payfast_service.dart';
+import 'package:amrny/service/pay_services/paypal_service.dart';
+import 'package:amrny/service/pay_services/paystack_service.dart';
+import 'package:amrny/service/pay_services/paytabs_service.dart';
+import 'package:amrny/service/pay_services/paytm_service.dart';
+import 'package:amrny/service/pay_services/razorpay_service.dart';
+import 'package:amrny/service/pay_services/square_service.dart';
+import 'package:amrny/service/pay_services/stripe_service.dart';
+import 'package:amrny/service/pay_services/zitopay_service.dart';
+import 'package:amrny/service/wallet_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 payAction(String method, BuildContext context, imagePath,
     {bool isFromOrderExtraAccept = false,

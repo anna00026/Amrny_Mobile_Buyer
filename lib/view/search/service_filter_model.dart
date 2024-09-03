@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/model/categoryModel.dart';
-import 'package:qixer/model/child_category_model.dart';
-import 'package:qixer/model/google_places_model.dart';
-import 'package:qixer/model/sub_category_model.dart';
-import 'package:qixer/service/filter_services_service.dart';
+import 'package:amrny/model/categoryModel.dart';
+import 'package:amrny/model/child_category_model.dart';
+import 'package:amrny/model/google_places_model.dart';
+import 'package:amrny/model/sub_category_model.dart';
+import 'package:amrny/service/filter_services_service.dart';
 
 class ServiceFilterViewModel {
   TextEditingController searchTextController = TextEditingController();

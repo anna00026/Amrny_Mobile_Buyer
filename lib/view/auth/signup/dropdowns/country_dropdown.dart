@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
-import 'package:qixer/view/auth/signup/dropdowns/country_dropdown_popup.dart';
-import 'package:qixer/view/auth/signup/dropdowns/country_states_dropdowns.dart';
+import 'package:amrny/service/dropdowns_services/country_dropdown_service.dart';
+import 'package:amrny/view/auth/signup/dropdowns/country_dropdown_popup.dart';
+import 'package:amrny/view/auth/signup/dropdowns/country_states_dropdowns.dart';
 
 import '../../../utils/responsive.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/booking_services/coupon_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/booking_services/coupon_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
 
 class BookConfirmationService with ChangeNotifier {
   bool isPanelOpened = false;

@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/jobs_service/edit_job_service.dart';
-import 'package:qixer/view/utils/common_helper.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/jobs_service/edit_job_service.dart';
+import 'package:amrny/view/utils/common_helper.dart';
 
 class EditJobUploadImage extends StatelessWidget {
   const EditJobUploadImage({super.key, required this.prevImageLink});

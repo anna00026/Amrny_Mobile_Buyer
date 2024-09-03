@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/booking_services/book_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/view/booking/booking_helper.dart';
-import 'package:qixer/view/booking/payment_choose_page.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/booking_services/book_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/view/booking/booking_helper.dart';
+import 'package:amrny/view/booking/payment_choose_page.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class AmountDetails extends StatelessWidget {
   const AmountDetails({super.key});

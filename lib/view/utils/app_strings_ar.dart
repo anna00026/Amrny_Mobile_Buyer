@@ -415,7 +415,7 @@ var appStringsAr = {
   "Payment cancelled!": "تم إلغاء الدفع!",
   "Payment has been expired.": "انتهت صلاحية الدفع.",
   "Payment has been cancelled.": "تم إلغاء الدفع.",
-  "Welcome to Qixer": "مرحبًا في Qixer",
+  "Welcome to Amrny": "مرحبًا في Amrny",
   "Hello! 👋": "مرحبًا! 👋",
   "You'll have to login/register to edit or see your profile info.": "سيتعين عليك تسجيل الدخول/التسجيل لتعديل أو عرض معلومات ملفك الشخصي.",
   "Sign-In/Sign-Up": "تسجيل الدخول/التسجيل",

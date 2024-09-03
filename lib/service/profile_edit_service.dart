@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileEditService with ChangeNotifier {
@@ -156,7 +156,7 @@ class ProfileEditService with ChangeNotifier {
   //   var request = http.MultipartRequest(
   //     'POST',
   //     Uri.parse(
-  //         "https://nazmul.xgenious.com/qixer_with_api/api/v1/user/update-profile"),
+  //         "https://nazmul.xgenious.com/amrny_with_api/api/v1/user/update-profile"),
   //   );
   //   Map<String, String> headers = {
   //     "Accept": "application/json",

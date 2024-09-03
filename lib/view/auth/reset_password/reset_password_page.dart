@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/auth_services/reset_password_service.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/auth_services/reset_password_service.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
 
 import '../../utils/constant_colors.dart';
 

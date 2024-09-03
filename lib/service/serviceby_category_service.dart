@@ -4,13 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/data/network/network_api_services.dart';
-import 'package:qixer/model/serviceby_category_model.dart';
-import 'package:qixer/model/sub_category_model.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/db/db_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/data/network/network_api_services.dart';
+import 'package:amrny/model/serviceby_category_model.dart';
+import 'package:amrny/model/sub_category_model.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/db/db_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class ServiceByCategoryService with ChangeNotifier {
   var serviceMap = [];

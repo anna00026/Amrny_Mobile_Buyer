@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 

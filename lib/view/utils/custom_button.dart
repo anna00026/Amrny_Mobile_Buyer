@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import 'constant_colors.dart';
 import 'others_helper.dart';

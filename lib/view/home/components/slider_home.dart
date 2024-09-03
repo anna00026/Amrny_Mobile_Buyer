@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/rtl_service.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/rtl_service.dart';
 
 import '../../utils/constant_colors.dart';
 

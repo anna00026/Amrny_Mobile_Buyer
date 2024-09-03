@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/model/categoryModel.dart';
-import 'package:qixer/model/child_category_model.dart';
-import 'package:qixer/model/sub_category_model.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/categoryModel.dart';
+import 'package:amrny/model/child_category_model.dart';
+import 'package:amrny/model/sub_category_model.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../data/network/network_api_services.dart';
 

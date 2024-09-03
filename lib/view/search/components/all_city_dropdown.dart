@@ -1,7 +1,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
-// import 'package:qixer/service/serachbar_with_dropdown_service.dart';
-// import 'package:qixer/view/utils/constant_colors.dart';
+// import 'package:amrny/service/serachbar_with_dropdown_service.dart';
+// import 'package:amrny/view/utils/constant_colors.dart';
 
 // class AllCityDropdown extends StatelessWidget {
 //   const AllCityDropdown({Key? key, required this.searchText}) : super(key: key);

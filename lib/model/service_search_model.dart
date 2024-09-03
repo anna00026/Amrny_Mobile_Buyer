@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:qixer/helper/extension/string_extension.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
 
 ServiceSearchModel serviceSearchModelFromJson(String str) =>
     ServiceSearchModel.fromJson(json.decode(str));

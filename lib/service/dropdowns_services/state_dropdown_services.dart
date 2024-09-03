@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/model/dropdown_models/states_dropdown_model.dart';
-import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/dropdown_models/states_dropdown_model.dart';
+import 'package:amrny/service/dropdowns_services/country_dropdown_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class StateDropdownService with ChangeNotifier {
   var statesDropdownList = [];

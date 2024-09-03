@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/pay_services/paypal_service.dart';
+import 'package:amrny/service/pay_services/paypal_service.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../service/booking_services/place_order_service.dart';
@@ -85,7 +85,7 @@ class PaypalPaymentState extends State<PaypalPayment> {
   }
 
   // item name, price and quantity
-  String itemName = 'Qixer payment';
+  String itemName = 'Amrny payment';
 
   int quantity = 1;
 

@@ -5,13 +5,13 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/service/payment_gateway_list_service.dart';
-import 'package:qixer/service/wallet_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/service/payment_gateway_list_service.dart';
+import 'package:amrny/service/wallet_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:http/http.dart' as http;
 
@@ -165,8 +165,8 @@ class CashfreePayment extends StatelessWidget {
 
     // final merchantKey = '77jcu5v4ufdod';
     final data = {
-      'title': 'Qixer payment',
-      'description': 'Qixer payment',
+      'title': 'Amrny payment',
+      'description': 'Amrny payment',
       'last_order_id': orderId,
       'cancel_url': 'failed.com',
       'success_url': 'success.com',

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/view/auth/login/login.dart';
-import 'package:qixer/view/home/landing_page.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/view/auth/login/login.dart';
+import 'package:amrny/view/home/landing_page.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'introduction_page.dart';

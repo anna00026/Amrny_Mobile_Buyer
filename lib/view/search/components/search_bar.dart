@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/int_extension.dart';
-import 'package:qixer/helper/extension/widget_extension.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/filter_services_service.dart';
-import 'package:qixer/view/search/components/filter_icon_button.dart';
-import 'package:qixer/view/search/components/location_sheet.dart';
-import 'package:qixer/view/search/service_filter_model.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/custom_future_widget.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/helper/extension/int_extension.dart';
+import 'package:amrny/helper/extension/widget_extension.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/filter_services_service.dart';
+import 'package:amrny/view/search/components/filter_icon_button.dart';
+import 'package:amrny/view/search/components/location_sheet.dart';
+import 'package:amrny/view/search/service_filter_model.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/custom_future_widget.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../../../service/service_details_service.dart';
 import '../../home/components/service_card.dart';

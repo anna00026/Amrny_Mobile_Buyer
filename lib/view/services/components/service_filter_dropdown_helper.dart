@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/all_services_service.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/all_services_service.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../../utils/others_helper.dart';
 

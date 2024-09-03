@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:pusher_beams/pusher_beams.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../helper/pusher_helper.dart';

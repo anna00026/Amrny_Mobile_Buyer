@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class CustomDropdown extends StatelessWidget {
   String hintText;

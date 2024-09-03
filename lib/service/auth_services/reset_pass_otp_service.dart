@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/auth_services/reset_password_service.dart';
-import 'package:qixer/view/auth/reset_password/reset_password_page.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/auth_services/reset_password_service.dart';
+import 'package:amrny/view/auth/reset_password/reset_password_page.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class ResetPasswordOtpService {
   checkOtp(enteredOtp, email, BuildContext context) {

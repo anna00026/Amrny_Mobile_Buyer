@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutterzilla_fixed_grid/flutterzilla_fixed_grid.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/profile_service.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/profile_service.dart';
 
 import '../../../utils/common_helper.dart';
 import '../../../utils/constant_colors.dart';

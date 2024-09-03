@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:qixer/view/utils/custom_input.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/utils/custom_input.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../../../utils/common_helper.dart';
 

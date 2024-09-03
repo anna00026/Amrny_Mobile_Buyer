@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
-import 'package:qixer/helper/extension/int_extension.dart';
-import 'package:qixer/model/child_category_model.dart';
-import 'package:qixer/model/sub_category_model.dart';
-import 'package:qixer/view/search/service_filter_model.dart';
-import 'package:qixer/view/utils/custom_dropdown.dart';
-import 'package:qixer/view/utils/custom_future_widget.dart';
-import 'package:qixer/view/utils/field_label.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/int_extension.dart';
+import 'package:amrny/model/child_category_model.dart';
+import 'package:amrny/model/sub_category_model.dart';
+import 'package:amrny/view/search/service_filter_model.dart';
+import 'package:amrny/view/utils/custom_dropdown.dart';
+import 'package:amrny/view/utils/custom_future_widget.dart';
+import 'package:amrny/view/utils/field_label.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../../../model/categoryModel.dart';
 import '../../../service/filter_category_service.dart';

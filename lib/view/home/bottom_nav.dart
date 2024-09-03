@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../utils/constant_colors.dart';
 

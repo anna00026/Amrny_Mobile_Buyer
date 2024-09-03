@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class CouponService with ChangeNotifier {
   double couponDiscount = 0;

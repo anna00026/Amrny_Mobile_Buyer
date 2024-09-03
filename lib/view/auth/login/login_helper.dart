@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class LoginHelper {
   ConstantColors cc = ConstantColors();
