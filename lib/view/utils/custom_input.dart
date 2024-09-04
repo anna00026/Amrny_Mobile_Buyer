@@ -20,6 +20,7 @@ class CustomInput extends StatelessWidget {
   final maxLength;
   final List<TextInputFormatter>? formatters;
   final TextEditingController? controller;
+  final TextDirection? textDirection;
   Iterable<String>? autofillHints;
 
   CustomInput(
@@ -40,6 +41,7 @@ class CustomInput extends StatelessWidget {
       this.formatters,
       this.maxLength,
       this.autofillHints,
+      this.textDirection,
       this.marginBottom = 19});
 
   @override
@@ -64,8 +66,9 @@ class CustomInput extends StatelessWidget {
           inputFormatters: formatters ?? [],
           obscureText: isPasswordField,
           autofillHints: autofillHints,
+          textDirection: textDirection ?? TextDirection.ltr,          
           style: const TextStyle(fontSize: 14),
-          decoration: InputDecoration(
+          decoration: InputDecoration(            
               prefixIcon: icon != null
                   ? Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -92,6 +95,7 @@ class CustomInput extends StatelessWidget {
               focusedErrorBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: ConstantColors().primaryColor)),
               hintText: hintText,
+              hintTextDirection: textDirection ?? TextDirection.ltr,
               contentPadding: EdgeInsets.symmetric(
                   horizontal: paddingHorizontal, vertical: 18)),
         ));

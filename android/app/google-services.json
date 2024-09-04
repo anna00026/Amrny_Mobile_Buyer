@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "453222816371",
-    "project_id": "amrny-1ce2b",
-    "storage_bucket": "amrny-1ce2b.appspot.com"
+    "project_number": "506791629298",
+    "project_id": "amrny---seller",
+    "storage_bucket": "amrny---seller.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:453222816371:android:d56b655e0424a9a8f6e806",
+        "mobilesdk_app_id": "1:506791629298:android:5a6d5ebf91b5afac759b6b",
         "android_client_info": {
           "package_name": "com.buyer.amrny"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCnIfn53aAdXLhVet3U1nKF1m6pgIVgFuQ"
+          "current_key": "AIzaSyDM3VGwBWMY67872mrvIIj8CvCbqxP1hNw"
         }
       ],
       "services": {

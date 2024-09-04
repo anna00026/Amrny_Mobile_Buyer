@@ -58,6 +58,7 @@ class SubscriptionService with ChangeNotifier {
         print(response.body);
         //Something went wrong
         isLoading = false;
+        subscription = null;
         notifyListeners();
         setLoadingFalse();
       }

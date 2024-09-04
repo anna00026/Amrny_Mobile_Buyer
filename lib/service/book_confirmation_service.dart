@@ -11,9 +11,13 @@ class BookConfirmationService with ChangeNotifier {
   double totalPriceOnlineServiceAfterAllCalculation = 0.0;
   var subTotalOnlineServiceAfterAllCalculation = 0.0;
 
+  double basePrice = 0.0;
+
   var taxPrice;
   var taxPriceOnline;
   var taxPercentage;
+
+  double discount = 0.0;
 
   setTotalOnlineService(v) {
     totalPriceOnlineServiceAfterAllCalculation = v;
@@ -53,12 +57,18 @@ class BookConfirmationService with ChangeNotifier {
     return total;
   }
 
-  calculateSubtotal(List includedList, List extrasList) {
+  calculateBasePrice(List includedList, List extrasList) {
     var includedTotal = 0.0;
     var extraTotal = 0.0;
     includedTotal = includedTotalPrice(includedList);
     extraTotal = extrasTotalPrice(extrasList);
-    subTotalAfterAllCalculation = includedTotal + extraTotal;
+    basePrice = includedTotal + extraTotal;
+    return basePrice;
+  }
+
+  calculateSubtotal(List includedList, List extrasList) {
+    subTotalAfterAllCalculation =
+        calculateBasePrice(includedList, extrasList) - discount;
 
     return subTotalAfterAllCalculation;
   }
@@ -71,54 +81,53 @@ class BookConfirmationService with ChangeNotifier {
     return extraTotal;
   }
 
-  calculateTax(
-    taxPercent,
-    List includedList,
-    List extrasList,
-    discount
-  ) {
+  calculateTax(taxPercent, List includedList, List extrasList) {
     taxPercentage = taxPercent;
-    var subTotal = calculateSubtotal(includedList, extrasList);
+    var subTotal = calculateBasePrice(includedList, extrasList);
     subTotal = subTotal - discount;
     taxPrice = (subTotal * (taxPercent / (100 + taxPercent)) ?? 0);
 
     return taxPrice;
   }
 
+  calculateSubscriptionDiscount(
+      List includedList, List extrasList, double discountPercent) {
+    var subTotal = calculateBasePrice(includedList, extrasList);
+    return discountPercent / 100 * subTotal;
+  }
+
   calculateTotal(context, taxPercent, List includedList, List extrasList) {
     taxPercentage = taxPercent;
-    var subTotal = calculateSubtotal(includedList, extrasList);
-    var discount = Provider.of<CouponService>(context, listen: false).couponDiscount;
+    var subTotal = calculateBasePrice(includedList, extrasList);
     subTotal = subTotal - discount;
-    var tax = calculateTax(taxPercent, includedList, extrasList, discount);
+    var tax = calculateTax(taxPercent, includedList, extrasList);
 
     totalPriceAfterAllcalculation = subTotal - tax;
-    Future.delayed(const Duration(microseconds: 500), () {
-      notifyListeners();
-    });
+    return totalPriceAfterAllcalculation;
   }
 
   calculateTotalOnlineService(
-      taxPercent, List includedList, List extrasList, BuildContext context) {
+      BuildContext context, taxPercent, List includedList, List extrasList) {
     taxPercentage = taxPercent;
-    var subTotal = calculateSubtotal(includedList, extrasList);
-    var discount = Provider.of<CouponService>(context, listen: false).couponDiscount;
+    var subTotal = calculateBasePrice(includedList, extrasList);
+    var discount =
+        Provider.of<CouponService>(context, listen: false).couponDiscount;
     subTotal = subTotal - discount;
-    var tax = calculateTax(taxPercent, includedList, extrasList, discount);
+    var tax = calculateTax(taxPercent, includedList, extrasList);
     totalPriceOnlineServiceAfterAllCalculation = subTotal -
         tax +
         Provider.of<PersonalizationService>(context, listen: false)
             .defaultprice;
-    Future.delayed(const Duration(microseconds: 500), () {
-      notifyListeners();
-    });
+    return totalPriceOnlineServiceAfterAllCalculation;
   }
 
   caculateTotalAfterCouponApplied(couponDiscount) {
-    totalPriceAfterAllcalculation = subTotalAfterAllCalculation - couponDiscount;
-    taxPrice = subTotalAfterAllCalculation * (taxPercentage / (100 * taxPercentage));
+    discount = couponDiscount;
     totalPriceAfterAllcalculation =
-        subTotalAfterAllCalculation - taxPrice;
+        subTotalAfterAllCalculation - couponDiscount;
+    taxPrice =
+        subTotalAfterAllCalculation * (taxPercentage / (100 * taxPercentage));
+    totalPriceAfterAllcalculation = subTotalAfterAllCalculation - taxPrice;
     totalPriceOnlineServiceAfterAllCalculation =
         totalPriceOnlineServiceAfterAllCalculation - couponDiscount;
     notifyListeners();

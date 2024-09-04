@@ -1,3 +1,4 @@
+import 'package:amrny/service/subscription_service.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -135,8 +136,11 @@ class _ServicePersonalizationPageState
           child: Consumer<AppStringService>(
             builder: (context, asProvider, child) =>
                 Consumer<PersonalizationService>(
-                    builder: (context, provider, child) => provider.isloading ==
-                            false
+              builder: (context, provider, child) =>
+                  Consumer<SubscriptionService>(
+                builder: (context, discountProvider, child) =>
+                    (provider.isloading == false &&
+                            discountProvider.isLoading == false)
                         ? provider.serviceExtraData != 'error'
                             ? _getPersonalizationWidget(provider, asProvider)
                             : Text(
@@ -146,7 +150,9 @@ class _ServicePersonalizationPageState
                             height: MediaQuery.of(context).size.height - 250,
                             alignment: Alignment.center,
                             child: OthersHelper().showLoading(cc.primaryColor),
-                          )),
+                          ),
+              ),
+            ),
           ),
         ),
         bottomSheet: Consumer<AppStringService>(

@@ -1,3 +1,4 @@
+import 'package:amrny/service/subscription_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:amrny/service/app_string_service.dart';
@@ -233,14 +234,10 @@ class _ServiceDetailsPageState extends State<ServiceDetailsPage>
                                                 provider.serviceAllDetails
                                                     .serviceDetails.id,
                                                 context);
-                                        Provider.of<CouponService>(context,
+                                        Provider.of<SubscriptionService>(
+                                                context,
                                                 listen: false)
-                                            .getSubscriptionDiscount(
-                                                Provider.of<BookService>(
-                                                        context,
-                                                        listen: false)
-                                                    .totalPrice,
-                                                context);
+                                            .fetchSubscription();
 
                                         //=============>
                                         Navigator.push(

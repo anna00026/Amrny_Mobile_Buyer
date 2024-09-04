@@ -71,7 +71,13 @@ class _BookConfirmationPageState extends State<BookConfirmationPage> {
             ],
             minHeight: 200,
             panel: OrderDetailsPanel(
-              panelController: pc,
+              onTapTopHeader: () {
+                if (pc.isPanelOpen) {
+                  pc.close();
+                } else {
+                  pc.open();
+                }
+              },
             ),
             // collapsed: const OrderDetailsPanelProceed(),
             onPanelOpened: () {

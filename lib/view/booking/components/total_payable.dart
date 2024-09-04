@@ -40,11 +40,13 @@ class TotalPayable extends StatelessWidget {
                             .selectedJobPrice;
                       } else {
                         if (pProvider.isOnline == 0) {
-                          price = bcProvider.totalPriceAfterAllcalculation
+                          price = bcProvider
+                              .calculateSubtotal(
+                                  pProvider.includedList, pProvider.extrasList)
                               .toStringAsFixed(2);
                         } else {
                           price = bcProvider
-                              .totalPriceOnlineServiceAfterAllCalculation
+                              .calculateSubtotalForOnline(pProvider.extrasList)
                               .toStringAsFixed(2);
                         }
                       }

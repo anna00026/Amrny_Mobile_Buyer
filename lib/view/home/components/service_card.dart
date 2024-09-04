@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:amrny/service/subscription_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -165,11 +166,8 @@ class ServiceCard extends StatelessWidget {
                       Provider.of<PersonalizationService>(context,
                               listen: false)
                           .fetchServiceExtra(serviceId, context);
-                      Provider.of<CouponService>(context, listen: false)
-                          .getSubscriptionDiscount(
-                              Provider.of<BookService>(context, listen: false)
-                                  .totalPrice,
-                              context);
+                      Provider.of<SubscriptionService>(context, listen: false)
+                          .fetchSubscription();
                       Navigator.push(
                           context,
                           PageTransition(
@@ -261,7 +259,7 @@ class ServiceCardContents extends StatelessWidget {
             children: [
               //service name ======>
               Text(
-                title,
+                title ?? '',
                 textAlign: TextAlign.start,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

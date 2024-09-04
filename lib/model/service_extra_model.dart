@@ -80,8 +80,10 @@ class Service {
             json["service_include"].map((x) => ServiceInclude.fromJson(x))),
         serviceBenifit: List<ServiceBenifit>.from(
             json["service_benifit"].map((x) => ServiceBenifit.fromJson(x))),
-        taskOptions: List<TaskOption>.from(
-            json["options"].map((x) => TaskOption.fromJson(x))),
+        taskOptions: json["options"] == null
+            ? []
+            : List<TaskOption>.from(
+                json["options"].map((x) => TaskOption.fromJson(x))),
         sellerForMobile: SellerForMobile.fromJson(json["seller_for_mobile"]),
         serviceCity: json["service_city"] == null
             ? null
@@ -103,8 +105,8 @@ class Service {
             List<dynamic>.from(serviceInclude.map((x) => x.toJson())),
         "service_benifit":
             List<dynamic>.from(serviceBenifit.map((x) => x.toJson())),
-        "options":
-            List<dynamic>.from(taskOptions == null ? [] : taskOptions!.map((x) => x.toJson())),
+        "options": List<dynamic>.from(
+            taskOptions == null ? [] : taskOptions!.map((x) => x.toJson())),
         "seller_for_mobile": sellerForMobile.toJson(),
         "service_city": serviceCity?.toJson(),
       };
@@ -301,14 +303,8 @@ class ServiceImageClass {
       };
 }
 
-
 class TaskOption {
-  TaskOption({
-    this.id,
-    this.name,
-    this.description,
-    this.options
-  });
+  TaskOption({this.id, this.name, this.description, this.options});
 
   int? id;
   String? description;
@@ -318,16 +314,18 @@ class TaskOption {
   factory TaskOption.fromJson(Map<String, dynamic> json) => TaskOption(
         id: json["id"],
         description: json["description"],
-        options: json["options"] == null ? [] : List<TaskOption>.from(
-            json["options"].map((x) => TaskOption.fromJson(x))),
+        options: json["options"] == null
+            ? []
+            : List<TaskOption>.from(
+                json["options"].map((x) => TaskOption.fromJson(x))),
         name: json["name"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "description": description,
-        "options":
-            List<dynamic>.from(options == null ? [] : options!.map((x) => x.toJson())),
+        "options": List<dynamic>.from(
+            options == null ? [] : options!.map((x) => x.toJson())),
         "name": name,
       };
 }

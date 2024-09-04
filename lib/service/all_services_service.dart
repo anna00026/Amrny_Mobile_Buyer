@@ -114,6 +114,17 @@ class AllServicesService with ChangeNotifier {
     notifyListeners();
   }
 
+  defaultCategory() {
+    categoryDropdownList = [lnProvider.getString('Select Category')];
+    categoryDropdownIndexList = [0];
+    selectedCategory = lnProvider.getString('Select Category');
+    selectedCategoryId = 0;
+    subcatDropdownList = [lnProvider.getString('Select Subcategory')];
+    subcatDropdownIndexList = [0];
+    selectedSubcat = lnProvider.getString('Select Subcategory');
+    selectedSubcatId = 0;
+  }
+
   setLoadingTrue() {
     isLoading = true;
     notifyListeners();
@@ -160,11 +171,12 @@ class AllServicesService with ChangeNotifier {
   }
 
   fetchCategories(BuildContext context) async {
+    defaultCategory();
     var categoriesList = Provider.of<CategoryService>(context, listen: false)
         .categoriesDropdownList;
     if (categoriesList.isNotEmpty && categoryDropdownList.length == 1) {
       for (int i = 0; i < categoriesList.length; i++) {
-        categoryDropdownList.add(categoriesList[i].name);
+        categoryDropdownList.add(lnProvider.getString(categoriesList[i].name));
         categoryDropdownIndexList.add(categoriesList[i].id);
       }
       Future.delayed(const Duration(microseconds: 500), () {

@@ -140,7 +140,7 @@ class BookingHelper {
     );
   }
 
-  detailsPanelRow(String title, int quantity, String price) {
+  detailsPanelRow(String title, int quantity, String price, {isDeductValue = false}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -173,8 +173,8 @@ class BookingHelper {
             flex: 1,
             child: Text(
               rtlP.currencyDirection == 'left'
-                  ? "${rtlP.currency}$price"
-                  : "$price${rtlP.currency}",
+                  ? "${isDeductValue ? '-' : ''}${rtlP.currency}$price"
+                  : "$price${rtlP.currency}${isDeductValue ? '-' : ''}",
               textAlign:
                   rtlP.direction == 'ltr' ? TextAlign.right : TextAlign.left,
               style: TextStyle(

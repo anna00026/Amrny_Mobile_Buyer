@@ -166,6 +166,7 @@ class _CreateJobPageState extends State<CreateJobPage> {
                       },
                       hintText: asProvider.getString("Arabic Title"),
                       paddingHorizontal: 15,
+                      textDirection: TextDirection.rtl,
                       textInputAction: TextInputAction.next,
                       maxLength: 190,
                     ),

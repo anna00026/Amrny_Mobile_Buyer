@@ -47,7 +47,7 @@ class CreateJobService with ChangeNotifier {
     String? selectedCountryId = defaultCountryId;
     var selectedStateId =
         Provider.of<ProfileService>(context, listen: false)
-            .profileDetails.userDetails.city;
+            .profileDetails.userDetails.city.id;
 
     if (pickedImage == null) {
       OthersHelper()

@@ -9,11 +9,12 @@ import 'package:amrny/view/utils/others_helper.dart';
 
 class CouponService with ChangeNotifier {
   double couponDiscount = 0;
-  double subscriptionDiscount = 0;
 
   var appliedCoupon;
 
   bool isloading = false;
+
+  bool isFetchedCoupon = false;
 
   setLoadingTrue() {
     isloading = true;
@@ -31,50 +32,16 @@ class CouponService with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> getSubscriptionDiscount(totalAmount, BuildContext context) async {
-    var connection = await checkConnection();
-    if (connection) {
-      setLoadingTrue();
-      var data = jsonEncode({
-        'total_amount': totalAmount
-      });
-      var header = {
-        //if header type is application/json then the data should be in jsonEncode method
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      };
-
-      var response = await http.post(
-          Uri.parse('$baseApi/service-list/subscription-discount'),
-          body: data,
-          headers: header);
-
-      if (response.statusCode == 201) {
-        subscriptionDiscount = jsonDecode(response.body)['coupon_amount'];
-        appliedCoupon = 'subscription';
-        print('subscription discount amount is $subscriptionDiscount');
-
-        Provider.of<BookConfirmationService>(context, listen: false)
-            .caculateTotalAfterCouponApplied(subscriptionDiscount);
-
-        setLoadingFalse();
-        notifyListeners();
-        return true;
-      } else {
-        //something went wrong
-        print(response.body);
-        setLoadingFalse();
-        return false;
-      }
-    } else {
-      //internet off
-      return false;
-    }
+  setIsFetchedCoupon(bool val) {
+    isFetchedCoupon = val;
+    notifyListeners();
   }
+
 
   Future<bool> getCouponDiscount(
       couponCode, totalAmount, sellerId, BuildContext context) async {
     var connection = await checkConnection();
+    setIsFetchedCoupon(false);
     if (connection) {
       if (couponCode == appliedCoupon) {
         OthersHelper()
@@ -102,7 +69,7 @@ class CouponService with ChangeNotifier {
         couponDiscount = jsonDecode(response.body)['coupon_amount'];
         appliedCoupon = couponCode;
         print('coupon amount is $couponDiscount');
-
+        setIsFetchedCoupon(true);
         Provider.of<BookConfirmationService>(context, listen: false)
             .caculateTotalAfterCouponApplied(couponDiscount);
 
