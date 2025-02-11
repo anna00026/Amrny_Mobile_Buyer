@@ -75,6 +75,7 @@ class TopService {
   TopService({
     this.id,
     this.title,
+    this.titleAr,
     this.image,
     this.price,
     this.sellerId,
@@ -84,6 +85,7 @@ class TopService {
 
   int? id;
   String? title;
+  String? titleAr;
   String? image;
   var price;
   int? sellerId;
@@ -94,6 +96,7 @@ class TopService {
         id: json["id"],
         title: json["title"],
         image: json["image"],
+        titleAr: json["title_ar"],
         price: json["price"],
         sellerId: json["seller_id"],
         reviewsForMobile: List<ReviewsForMobile>.from(json["reviews_for_mobile"]
@@ -104,6 +107,7 @@ class TopService {
   Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,
+        "title_ar": titleAr,
         "image": image,
         "price": price,
         "seller_id": sellerId,

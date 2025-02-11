@@ -2,7 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/rtl_service.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/rtl_service.dart';
 
 import '../../utils/constant_colors.dart';
 
@@ -47,50 +48,52 @@ class SliderHome extends StatelessWidget {
                 ),
               ),
             ),
-            Consumer<RtlService>(
-              builder: (context, rtlP, child) => Positioned(
-                  left: rtlP.direction == 'ltr' ? 25 : 0,
-                  right: rtlP.direction == 'ltr' ? 0 : 25,
-                  top: 20,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 2,
-                        child: Text(
-                          sliderDetailsList[itemIndex]['title'],
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: cc.greyFour,
-                              fontSize: 21,
-                              fontWeight: FontWeight.bold),
+            Consumer<AppStringService>(
+              builder: (context, asProvider, child) => Consumer<RtlService>(
+                builder: (context, rtlP, child) => Positioned(
+                    left: rtlP.direction == 'ltr' ? 25 : 0,
+                    right: rtlP.direction == 'ltr' ? 0 : 25,
+                    top: 20,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 2,
+                          child: Text(
+                            asProvider.getString(sliderDetailsList[itemIndex]['title']),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: cc.greyFour,
+                                fontSize: 21,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 7,
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 2 - 20,
-                        child: Text(
-                          sliderDetailsList[itemIndex]['subtitle'],
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: cc.greyFour, fontSize: 14, height: 1.3),
+                        const SizedBox(
+                          height: 7,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 7,
-                      ),
-                      // ElevatedButton(
-                      //     style: ElevatedButton.styleFrom(
-                      //         primary: cc.greyFour, elevation: 0),
-                      //     onPressed: () {},
-                      //     child: const Text('Get now'))
-                    ],
-                  )),
-            )
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 2 - 20,
+                          child: Text(
+                            asProvider.getString(sliderDetailsList[itemIndex]['subtitle']),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: cc.greyFour, fontSize: 14, height: 1.3),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 7,
+                        ),
+                        // ElevatedButton(
+                        //     style: ElevatedButton.styleFrom(
+                        //         primary: cc.greyFour, elevation: 0),
+                        //     onPressed: () {},
+                        //     child: const Text('Get now'))
+                      ],
+                    )),
+              ),
+            ),
           ],
         ),
       ),

@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:qixer/model/service_search_model.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/service_search_model.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../data/network/network_api_services.dart';
 import '../model/categoryModel.dart';

@@ -4,16 +4,19 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/home_services/category_service.dart';
-import 'package:qixer/service/home_services/recent_services_service.dart';
-import 'package:qixer/service/home_services/slider_service.dart';
-import 'package:qixer/service/home_services/top_rated_services_service.dart';
-import 'package:qixer/service/jobs_service/recent_jobs_service.dart';
-import 'package:qixer/service/permissions_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/service/push_notification_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/auth_services/signup_service.dart';
+import 'package:amrny/service/dropdowns_services/country_dropdown_service.dart';
+import 'package:amrny/service/home_services/category_service.dart';
+import 'package:amrny/service/home_services/recent_services_service.dart';
+import 'package:amrny/service/home_services/slider_service.dart';
+import 'package:amrny/service/home_services/top_rated_services_service.dart';
+import 'package:amrny/service/jobs_service/recent_jobs_service.dart';
+import 'package:amrny/service/permissions_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/service/push_notification_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 late bool isIos;
 
@@ -26,6 +29,13 @@ Future<bool> checkConnection() async {
   } else {
     return true;
   }
+}
+
+formatDate(inputDate) {
+  var outputFormat = DateFormat('MM/dd/yyyy');
+  var outputDate = outputFormat.format(inputDate);
+
+  return outputDate;
 }
 
 twoDouble(double value) {
@@ -78,10 +88,12 @@ removeDollar(value) {
 }
 
 runAtstart(BuildContext context) async {
-  Provider.of<RtlService>(context, listen: false).fetchCurrency();
+  Provider.of<RtlService>(context, listen: false).fetchCurrency();await Provider.of<CountryDropdownService>(context, listen: false).fetchDefaultCountry();  
+  Provider.of<SignupService>(context, listen: false).setCountryCode(defaultCountryCode);  
   //language direction (ltr or rtl)
 
-  await Provider.of<RtlService>(context, listen: false).fetchDirection(context);
+  // await Provider.of<RtlService>(context, listen: false).fetchDirection(context);
+  await Provider.of<AppStringService>(context, listen: false).loadInitialLanguage(context);
   await Provider.of<ProfileService>(context, listen: false).fetchData();
 //fetch translated strings
   // Provider.of<AppStringService>(context, listen: false)

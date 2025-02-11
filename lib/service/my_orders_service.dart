@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/model/my_orders_list_model.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/my_orders_list_model.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyOrdersService with ChangeNotifier {

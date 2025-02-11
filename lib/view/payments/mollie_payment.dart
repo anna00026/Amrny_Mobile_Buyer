@@ -4,12 +4,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/service/payment_gateway_list_service.dart';
-import 'package:qixer/service/wallet_service.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/service/payment_gateway_list_service.dart';
+import 'package:amrny/service/wallet_service.dart';
+import 'package:amrny/view/utils/responsive.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:http/http.dart' as http;
 
@@ -161,9 +161,9 @@ class MolliePayment extends StatelessWidget {
         headers: header,
         body: jsonEncode({
           "amount": {"value": amount, "currency": currencyCode},
-          "description": "Qixer payment",
+          "description": "Amrny payment",
           "redirectUrl": successUrl,
-          "webhookUrl": successUrl, "metadata": 'mollieQixer$orderId',
+          "webhookUrl": successUrl, "metadata": 'mollieAmrny$orderId',
           // "method": "creditcard",
         }));
     if (response.statusCode == 201) {

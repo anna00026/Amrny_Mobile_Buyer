@@ -42,25 +42,35 @@ class ProfileModel {
 }
 
 class UserDetails {
-  UserDetails({
-    this.id,
-    this.name,
-    this.email,
-    this.phone,
-    this.address,
-    this.about,
-    this.googleId,
-    this.facebookId,
-    this.countryId,
-    this.serviceCity,
-    this.serviceArea,
-    this.postCode,
-    this.image,
-    this.countryCode,
-    required this.country,
-    required this.city,
-    required this.area,
-  });
+  UserDetails(
+      {this.id,
+      this.name,
+      this.email,
+      this.phone,
+      this.address,
+      this.about,
+      this.googleId,
+      this.facebookId,
+      this.countryId,
+      this.serviceCity,
+      this.serviceArea,
+      this.postCode,
+      this.image,
+      this.countryCode,
+      required this.country,
+      required this.city,
+      required this.area,
+      this.taxNumber,
+      this.fbUrl,
+      this.twUrl,
+      this.goUrl,
+      this.liUrl,
+      this.yoUrl,
+      this.inUrl,
+      this.drUrl,
+      this.twiUrl,
+      this.piUrl,
+      this.reUrl});
 
   int? id;
   String? name;
@@ -80,6 +90,19 @@ class UserDetails {
   City? city;
   Area? area;
 
+  String? taxNumber;
+
+  String? fbUrl;
+  String? twUrl;
+  String? goUrl;
+  String? liUrl;
+  String? yoUrl;
+  String? inUrl;
+  String? drUrl;
+  String? twiUrl;
+  String? piUrl;
+  String? reUrl;
+
   factory UserDetails.fromJson(Map<String, dynamic> json) => UserDetails(
         id: json["id"],
         name: json["name"],
@@ -98,6 +121,17 @@ class UserDetails {
         country: Country.fromJson(json["country"]),
         city: City.fromJson(json["city"]),
         area: Area.fromJson(json["area"]),
+        taxNumber: json['tax_number'],
+        fbUrl: json['fb_url'],
+        twUrl: json['tw_url'],
+        goUrl: json['go_url'],
+        liUrl: json['li_url'],
+        yoUrl: json['yo_url'],
+        inUrl: json['in_url'],
+        drUrl: json['dr_url'],
+        twiUrl: json['twi_url'],
+        piUrl: json['pi_url'],
+        reUrl: json['re_url'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -116,6 +150,17 @@ class UserDetails {
         "country": country?.toJson(),
         "city": city?.toJson(),
         "area": area?.toJson(),
+        'tax_number': taxNumber,
+        'fb_url': fbUrl,
+        'tw_url': twUrl,
+        'go_url': goUrl,
+        'li_url': liUrl,
+        'yo_url': yoUrl,
+        'in_url': inUrl,
+        'dr_url': drUrl,
+        'twi_url': twiUrl,
+        'pi_url': piUrl,
+        're_url': reUrl,
       };
 }
 

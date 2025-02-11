@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/view/services/components/service_filter_dropdown_helper.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/view/services/components/service_filter_dropdown_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 import '../../auth/signup/dropdowns/country_dropdown.dart';
 import '../../auth/signup/dropdowns/state_dropdown.dart';

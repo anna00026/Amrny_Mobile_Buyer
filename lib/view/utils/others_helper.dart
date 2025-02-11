@@ -3,14 +3,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../../service/app_string_service.dart';
 
 //===========================>
 
-String siteLink = "https://qixer.bytesed.com";
+String siteLink = 'https://amrny.com';
 
 String get baseApi => '$siteLink/api/v1';
 

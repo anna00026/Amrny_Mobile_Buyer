@@ -1,4 +1,4 @@
-package com.xgenious.qixer
+package com.buyer.amrny
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterFragmentActivity

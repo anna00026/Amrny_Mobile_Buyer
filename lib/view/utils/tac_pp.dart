@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
 
 import '/helper/extension/context_extension.dart';
 import 'constant_colors.dart';

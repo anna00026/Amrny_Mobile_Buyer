@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_string_service.dart';
@@ -42,6 +42,7 @@ class RtlService with ChangeNotifier {
   }
 
   fetchDirection(BuildContext context) async {
+    
     if (alreadyRtlLoaded == false) {
       var response = await http.get(Uri.parse('$baseApi/language'));
       print(response.body);
@@ -87,5 +88,11 @@ class RtlService with ChangeNotifier {
     } else {
       //already loaded from server. no need to load again
     }
+  }
+
+  changeDirection(String direction, String locale) {
+    this.direction = direction;
+    langSlug = locale == 'en' ? 'en_US' : 'ar_AR';
+    notifyListeners();
   }
 }

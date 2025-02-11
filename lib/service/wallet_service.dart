@@ -6,16 +6,16 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/int_extension.dart';
-import 'package:qixer/model/wallet_history_model.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/service/payment_gateway_list_service.dart';
-import 'package:qixer/view/home/landing_page.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/wallet/wallet_page.dart';
+import 'package:amrny/helper/extension/int_extension.dart';
+import 'package:amrny/model/wallet_history_model.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/service/payment_gateway_list_service.dart';
+import 'package:amrny/view/home/landing_page.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/wallet/wallet_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class WalletService with ChangeNotifier {

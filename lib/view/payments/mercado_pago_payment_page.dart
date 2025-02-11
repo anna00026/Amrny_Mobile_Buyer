@@ -7,15 +7,15 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/booking_services/book_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/booking_services/place_order_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/service/payment_gateway_list_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/service/wallet_service.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/booking_services/book_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/booking_services/place_order_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/service/payment_gateway_list_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/service/wallet_service.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../service/rtl_service.dart';
@@ -187,8 +187,8 @@ class _MercadopagoPaymentPageState extends State<MercadopagoPaymentPage> {
     var data = jsonEncode({
       "items": [
         {
-          "title": "Qixer",
-          "description": "Qixer payment",
+          "title": "Amrny",
+          "description": "Amrny payment",
           "quantity": 1,
           "currency_id": currencyCode,
           "unit_price": amount

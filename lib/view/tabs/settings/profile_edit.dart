@@ -4,21 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/dropdowns_services/area_dropdown_service.dart';
-import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
-import 'package:qixer/service/dropdowns_services/state_dropdown_services.dart';
-import 'package:qixer/service/profile_edit_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/auth/signup/components/country_states_dropdowns.dart';
-import 'package:qixer/view/auth/signup/signup_helper.dart';
-import 'package:qixer/view/booking/components/textarea_field.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/dropdowns_services/area_dropdown_service.dart';
+import 'package:amrny/service/dropdowns_services/country_dropdown_service.dart';
+import 'package:amrny/service/dropdowns_services/state_dropdown_services.dart';
+import 'package:amrny/service/profile_edit_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/auth/signup/components/country_states_dropdowns.dart';
+import 'package:amrny/view/auth/signup/signup_helper.dart';
+import 'package:amrny/view/booking/components/textarea_field.dart';
+import 'package:amrny/view/services/components/language_dropdown_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -41,6 +42,32 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
   TextEditingController aboutController = TextEditingController();
   String? countryCode;
 
+  Map<String, dynamic> profileJson = {};
+  List<String> socialFieldNames = [
+    'fb_url',
+    'tw_url',
+    'go_url',
+    'li_url',
+    'yo_url',
+    'in_url',
+    'dr_url',
+    'twi_url',
+    'pi_url',
+    're_url',
+  ];
+  List<String> socialLabelNames = [
+    'Facebook',
+    'Twitter',
+    'Google',
+    'Linkedin',
+    'Youtube',
+    'Instagram',
+    'Dribble',
+    'Twitch',
+    'Pinterest',
+    'Reddit',
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -48,12 +75,9 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
             .profileDetails
             .userDetails
             .countryCode ??
-        "ES";
-    //set country code
-    Future.delayed(const Duration(milliseconds: 600), () {
-      Provider.of<ProfileEditService>(context, listen: false)
-          .setCountryCode(countryCode);
-    });
+        defaultCountryCode;
+    Provider.of<ProfileEditService>(context, listen: false)
+        .setCountryCode(countryCode);
     final pProvider = Provider.of<ProfileService>(context, listen: false);
     fullNameController.text = pProvider.profileDetails.userDetails.name ?? '';
     emailController.text = pProvider.profileDetails.userDetails.email ?? '';
@@ -69,12 +93,30 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
         .setStateBasedOnUserProfile(context);
     Provider.of<AreaDropdownService>(context, listen: false)
         .setAreaBasedOnUserProfile(context);
-    Provider.of<ProfileEditService>(context, listen: false)
-        .setCountryCode(pProvider.profileDetails.userDetails.countryCode);
+    profileJson = Provider.of<ProfileService>(context, listen: false)
+        .profileDetails
+        .toJson()['user_details'];
   }
 
   late AnimationController localAnimationController;
   XFile? pickedImage;
+
+  Widget _getSocialInput(int idx, AppStringService ln) {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const SizedBox(
+        height: 8,
+      ),
+      CommonHelper().labelCommon(ln.getString('${socialLabelNames[idx]} Link')),
+      CustomInput(
+        initialValue: profileJson[socialFieldNames[idx]],
+        hintText: ln.getString(
+            'https://www.${socialLabelNames[idx].toLowerCase()}.com/'),
+        textInputAction: TextInputAction.next,
+        onChanged: (val) => profileJson[socialFieldNames[idx]] = val,
+      ),
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     ConstantColors cc = ConstantColors();
@@ -253,6 +295,9 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                               textAlign: rtlP.direction == 'ltr'
                                   ? TextAlign.left
                                   : TextAlign.right,
+                              onCountryChanged: (country) {
+                                provider.setCountryCode(country.code);
+                              },
                               onChanged: (phone) {
                                 provider.setCountryCode(phone.countryISOCode);
                                 phoneController.text = phone.completeNumber;
@@ -283,7 +328,11 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                         height: 18,
                       ),
 
+                      const SizedBox(
+                        height: 18,
+                      ),
                       //dropdowns
+
                       const CountryStatesDropdowns(),
 
                       Column(
@@ -316,6 +365,26 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                           ),
                         ],
                       ),
+
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            CommonHelper().labelCommon(
+                                asProvider.getString("Tax Number")),
+                            CustomInput(
+                              initialValue: profileJson['tax_number'],
+                              hintText:
+                                  asProvider.getString("Enter your tax number"),
+                              textInputAction: TextInputAction.next,
+                              onChanged: (val) =>
+                                  profileJson['tax_number'] = val,
+                            ),
+                          ]),
+                      for (int i = 0; i < socialFieldNames.length; i++)
+                        _getSocialInput(i, asProvider),
 
                       const SizedBox(
                         height: 25,
@@ -378,6 +447,7 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
                             addressController.text,
                             aboutController.text,
                             pickedImage?.path,
+                            profileJson,
                             context,
                           );
                           if (result == true || result == false) {

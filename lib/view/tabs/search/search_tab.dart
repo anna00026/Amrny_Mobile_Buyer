@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
-import 'package:qixer/helper/extension/widget_extension.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/view/home_map_view/home_map_view.dart';
-import 'package:qixer/view/search/components/search_bar.dart' as sb;
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
+import 'package:amrny/helper/extension/widget_extension.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/view/home_map_view/home_map_view.dart';
+import 'package:amrny/view/search/components/search_bar.dart' as sb;
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
 
 class SearchTab extends StatefulWidget {
   const SearchTab({super.key});

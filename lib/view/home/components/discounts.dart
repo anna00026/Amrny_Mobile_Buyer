@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class Discounts extends StatelessWidget {
   const Discounts({

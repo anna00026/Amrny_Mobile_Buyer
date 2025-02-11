@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
-import 'package:qixer/helper/extension/int_extension.dart';
-import 'package:qixer/helper/extension/widget_extension.dart';
-import 'package:qixer/view/search/service_filter_model.dart';
-import 'package:qixer/view/utils/custom_dropdown.dart';
-import 'package:qixer/view/utils/field_label.dart';
-import 'package:qixer/view/utils/location_from_google.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/int_extension.dart';
+import 'package:amrny/helper/extension/widget_extension.dart';
+import 'package:amrny/view/search/service_filter_model.dart';
+import 'package:amrny/view/utils/custom_dropdown.dart';
+import 'package:amrny/view/utils/field_label.dart';
+import 'package:amrny/view/utils/location_from_google.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../../../service/filter_services_service.dart';
 import '../../utils/constant_colors.dart';

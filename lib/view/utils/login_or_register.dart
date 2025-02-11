@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
 
 import '../auth/login/login.dart';
 import '../utils/custom_button.dart';

@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/view/home/components/marker_window_painter.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/home/components/marker_window_painter.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../../service/service_details_service.dart';
 import '../services/service_details_page.dart';

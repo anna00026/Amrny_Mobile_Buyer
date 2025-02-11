@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/live_chat/chat_list_service.dart';
-import 'package:qixer/service/permissions_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/live_chat/chat_list_service.dart';
+import 'package:amrny/service/permissions_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../../../live_chat/chat_list_page.dart';
 

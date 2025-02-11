@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/auth_services/signup_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/auth/signup/signup_helper.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/auth_services/signup_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/auth/signup/signup_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class SignupPhonePass extends StatefulWidget {
   const SignupPhonePass(

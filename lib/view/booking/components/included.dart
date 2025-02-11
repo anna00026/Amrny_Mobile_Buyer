@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class Included extends StatelessWidget {
   const Included({

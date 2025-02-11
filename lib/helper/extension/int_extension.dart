@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
 
 extension SizedBoxExtension on int {
   Widget get toHeight {

@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class CouponService with ChangeNotifier {
   double couponDiscount = 0;
@@ -13,6 +13,8 @@ class CouponService with ChangeNotifier {
   var appliedCoupon;
 
   bool isloading = false;
+
+  bool isFetchedCoupon = false;
 
   setLoadingTrue() {
     isloading = true;
@@ -30,9 +32,16 @@ class CouponService with ChangeNotifier {
     notifyListeners();
   }
 
+  setIsFetchedCoupon(bool val) {
+    isFetchedCoupon = val;
+    notifyListeners();
+  }
+
+
   Future<bool> getCouponDiscount(
       couponCode, totalAmount, sellerId, BuildContext context) async {
     var connection = await checkConnection();
+    setIsFetchedCoupon(false);
     if (connection) {
       if (couponCode == appliedCoupon) {
         OthersHelper()
@@ -60,7 +69,7 @@ class CouponService with ChangeNotifier {
         couponDiscount = jsonDecode(response.body)['coupon_amount'];
         appliedCoupon = couponCode;
         print('coupon amount is $couponDiscount');
-
+        setIsFetchedCoupon(true);
         Provider.of<BookConfirmationService>(context, listen: false)
             .caculateTotalAfterCouponApplied(couponDiscount);
 

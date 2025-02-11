@@ -4,11 +4,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/service/service_details_service.dart';
-import 'package:qixer/view/services/seller_all_service_page.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/service/service_details_service.dart';
+import 'package:amrny/view/services/seller_all_service_page.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../../utils/constant_styles.dart';
 import '../service_helper.dart';

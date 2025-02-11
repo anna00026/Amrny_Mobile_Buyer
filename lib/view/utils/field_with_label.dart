@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/helper/extension/int_extension.dart';
+import 'package:amrny/helper/extension/int_extension.dart';
 import '/helper/extension/string_extension.dart';
 
 import 'field_label.dart';

@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/model/top_service_model.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/db/db_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/top_service_model.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/db/db_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class TopRatedServicesSerivce with ChangeNotifier {
   var topServiceMap = [];
@@ -53,6 +53,7 @@ class TopRatedServicesSerivce with ChangeNotifier {
             setServiceList(
                 data.topServices[i].id,
                 data.topServices[i].title,
+                data.topServices[i].titleAr,
                 data.topServices[i].sellerForMobile.name,
                 data.topServices[i].price,
                 averageRate,
@@ -74,10 +75,11 @@ class TopRatedServicesSerivce with ChangeNotifier {
   }
 
   setServiceList(
-      serviceId, title, sellerName, price, rating, image, index, sellerId) {
+      serviceId, title, titleAr, sellerName, price, rating, image, index, sellerId) {
     topServiceMap.add({
       'serviceId': serviceId,
       'title': title,
+      'title_ar': titleAr,
       'sellerName': sellerName,
       'price': price,
       'rating': rating,

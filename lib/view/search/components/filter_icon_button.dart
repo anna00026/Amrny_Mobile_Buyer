@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/helper/extension/int_extension.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/helper/extension/int_extension.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class FilterIconButton extends StatelessWidget {
   final String icon;

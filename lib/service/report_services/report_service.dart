@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/model/report_list_model.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/report_services/report_message_service.dart';
-import 'package:qixer/view/report/report_chat_page.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/report_list_model.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/report_services/report_message_service.dart';
+import 'package:amrny/view/report/report_chat_page.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ReportService with ChangeNotifier {

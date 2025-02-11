@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/auth_services/google_sign_service.dart';
-import 'package:qixer/service/auth_services/login_service.dart';
-import 'package:qixer/view/auth/login/login.dart';
-import 'package:qixer/view/intro/introduction_page.dart';
+import 'package:amrny/service/auth_services/google_sign_service.dart';
+import 'package:amrny/service/auth_services/login_service.dart';
+import 'package:amrny/view/auth/login/login.dart';
+import 'package:amrny/view/intro/introduction_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashService {

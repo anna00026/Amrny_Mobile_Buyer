@@ -25,9 +25,13 @@ class TopAllServicesModel {
   factory TopAllServicesModel.fromJson(Map<String, dynamic> json) =>
       TopAllServicesModel(
         topServices: TopServices.fromJson(json["top_services"]),
-        serviceImage: List<Image>.from(
-            json["service_image"].map((x) => Image.fromJson(x))),
-        reviewerImage: List<dynamic>.from(json["reviewer_image"].map((x) => x)),
+        serviceImage: json["service_image"] == null
+            ? []
+            : List<Image>.from(
+                json["service_image"].map((x) => Image.fromJson(x))),
+        reviewerImage: json["reviewer_image"] == null
+            ? []
+            : List<dynamic>.from(json["reviewer_image"].map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {

@@ -1,6 +1,6 @@
 import 'package:colorlizer/colorlizer.dart';
 import 'package:flutter/material.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class ReviewTab extends StatelessWidget {
   const ReviewTab({super.key, required this.provider});

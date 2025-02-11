@@ -9,15 +9,15 @@ import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
-import 'package:qixer/service/live_chat/chat_message_service.dart';
-import 'package:qixer/service/push_notification_service.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
+import 'package:amrny/service/live_chat/chat_message_service.dart';
+import 'package:amrny/service/push_notification_service.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../tabs/settings/supports/image_big_preview.dart';
 

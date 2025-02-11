@@ -2,9 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/view/jobs/create_job_page.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/view/jobs/create_job_page.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
 
 class MyJobsPageAppbar extends StatelessWidget {
   const MyJobsPageAppbar({super.key});

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
+import 'package:amrny/service/app_string_service.dart';
 
 import '../../utils/common_helper.dart';
 import '../../utils/constant_colors.dart';

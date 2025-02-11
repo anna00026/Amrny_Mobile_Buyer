@@ -2,9 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/rtl_service.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/rtl_service.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 import '../utils/common_helper.dart';
 
@@ -140,7 +140,7 @@ class BookingHelper {
     );
   }
 
-  detailsPanelRow(String title, int quantity, String price) {
+  detailsPanelRow(String title, int quantity, String price, {isDeductValue = false}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -173,8 +173,8 @@ class BookingHelper {
             flex: 1,
             child: Text(
               rtlP.currencyDirection == 'left'
-                  ? "${rtlP.currency}$price"
-                  : "$price${rtlP.currency}",
+                  ? "${isDeductValue ? '-' : ''}${rtlP.currency}$price"
+                  : "$price${rtlP.currency}${isDeductValue ? '-' : ''}",
               textAlign:
                   rtlP.direction == 'ltr' ? TextAlign.right : TextAlign.left,
               style: TextStyle(

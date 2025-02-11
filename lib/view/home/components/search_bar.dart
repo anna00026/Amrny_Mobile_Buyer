@@ -1,8 +1,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
-// import 'package:qixer/view/search/search_page.dart';
-// import 'package:qixer/view/tabs/search/components/search_helper.dart';
-// import 'package:qixer/view/tabs/search/search_tab.dart';
+// import 'package:amrny/view/search/search_page.dart';
+// import 'package:amrny/view/tabs/search/components/search_helper.dart';
+// import 'package:amrny/view/tabs/search/search_tab.dart';
 
 // import '../../utils/constant_colors.dart';
 

@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:qixer/view/auth/login/login.dart';
-import 'package:qixer/view/auth/reset_password/reset_pass_otp_page.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/view/auth/login/login.dart';
+import 'package:amrny/view/auth/reset_password/reset_pass_otp_page.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class ResetPasswordService with ChangeNotifier {
   bool isloading = false;
@@ -90,7 +90,7 @@ class ResetPasswordService with ChangeNotifier {
         var data = jsonEncode({'email': email, 'password': newPass});
 
         setLoadingTrue();
-        if (baseApi == 'https://qixer.bytesed.com/api/v1') {
+        if (baseApi == 'https://amrny.com/api/v1') {
           await Future.delayed(const Duration(seconds: 1));
           OthersHelper().showToast(
               'This feature is turned off in test mode', Colors.black);

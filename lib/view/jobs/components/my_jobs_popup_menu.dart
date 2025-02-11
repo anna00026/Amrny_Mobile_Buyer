@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qixer/view/jobs/components/my_jobs_helper.dart';
-import 'package:qixer/view/jobs/edit_job_page.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/jobs/components/my_jobs_helper.dart';
+import 'package:amrny/view/jobs/edit_job_page.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class MyJobsPopupMenu extends StatelessWidget {
   const MyJobsPopupMenu({

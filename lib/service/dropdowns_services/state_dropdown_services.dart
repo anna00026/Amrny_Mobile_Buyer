@@ -3,17 +3,17 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/model/dropdown_models/states_dropdown_model.dart';
-import 'package:qixer/service/dropdowns_services/country_dropdown_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/dropdown_models/states_dropdown_model.dart';
+import 'package:amrny/service/dropdowns_services/country_dropdown_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 class StateDropdownService with ChangeNotifier {
   var statesDropdownList = [];
   var statesDropdownIndexList = [];
 
   dynamic selectedState = 'Select City';
-  dynamic selectedStateId = defaultId;
+  dynamic selectedStateId = '0';
 
   bool isLoading = false;
 
@@ -35,7 +35,7 @@ class StateDropdownService with ChangeNotifier {
     statesDropdownList = [];
     statesDropdownIndexList = [];
     selectedState = 'Select City';
-    selectedStateId = defaultId;
+    selectedStateId = '0';
 
     currentPage = 1;
     notifyListeners();
@@ -98,9 +98,9 @@ class StateDropdownService with ChangeNotifier {
     } else {
       //error fetching data
       statesDropdownList.add('Select City');
-      statesDropdownIndexList.add(defaultId);
+      statesDropdownIndexList.add('0');
       selectedState = 'Select City';
-      selectedStateId = defaultId;
+      selectedStateId = '0';
       notifyListeners();
       return false;
     }
@@ -120,7 +120,7 @@ class StateDropdownService with ChangeNotifier {
             .userDetails
             .city
             ?.id ??
-        defaultId;
+        '0';
     print(statesDropdownList);
     print(statesDropdownIndexList);
     print('selected state $selectedState');
@@ -197,9 +197,9 @@ class StateDropdownService with ChangeNotifier {
     } else {
       //error fetching data
       statesDropdownList.add('Select City');
-      statesDropdownIndexList.add(defaultId);
+      statesDropdownIndexList.add('0');
       selectedState = 'Select City';
-      selectedStateId = defaultId;
+      selectedStateId = '0';
       notifyListeners();
       return false;
     }

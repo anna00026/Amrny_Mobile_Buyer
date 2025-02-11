@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/booking/booking_helper.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/booking/booking_helper.dart';
+import 'package:amrny/view/services/components/language_dropdown_helper.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
 
 class MenuPersonalInfoSection extends StatelessWidget {
   const MenuPersonalInfoSection({super.key});
@@ -55,8 +57,9 @@ class MenuPersonalInfoSection extends StatelessWidget {
                           'null',
                           asProvider.getString("Address"),
                           profileProvider.profileDetails.userDetails.address ??
-                              '',
-                          lastBorder: false),
+                              ''),
+                      //dropdown for language
+                      LanguageDropdownHelper().languageDropdown(cc, context),
                     ]),
               )),
     );

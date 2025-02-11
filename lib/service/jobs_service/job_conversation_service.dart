@@ -5,13 +5,13 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/model/jobs/job_conversation_model.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/service/push_notification_service.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/model/jobs/job_conversation_model.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/service/push_notification_service.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class JobConversationService with ChangeNotifier {

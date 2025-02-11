@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/int_extension.dart';
-import 'package:qixer/service/my_orders_service.dart';
+import 'package:amrny/helper/extension/int_extension.dart';
+import 'package:amrny/service/my_orders_service.dart';
 
 import '../../utils/common_helper.dart';
 import '../../utils/custom_dropdown.dart';

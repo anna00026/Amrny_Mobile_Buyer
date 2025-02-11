@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/tabs/settings/profile_edit.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/tabs/settings/profile_edit.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -97,7 +97,7 @@ class GuestAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CommonHelper().titleCommon("Hello! 👋", color: cc.black3),
-          CommonHelper().titleCommon("Welcome to Qixer", color: cc.black3),
+          CommonHelper().titleCommon("Welcome to Amrny", color: cc.black3),
         ],
       ),
     );

@@ -1,4 +1,4 @@
-var appStrings = {
+var appStringsEn = {
   "welcome": "welcome",
   "Browse categories": "Browse categories",
   "All categories": "All categories",
@@ -445,7 +445,7 @@ var appStrings = {
   "Payment cancelled!": "Payment cancelled!",
   "Payment has been expired.": "Payment has been expired.",
   "Payment has been cancelled.": "Payment has been cancelled.",
-  "Welcome to Qixer": "Welcome to Qixer",
+  "Welcome to Amrny": "Welcome to Amrny",
   "Hello! 👋": "Hello! 👋",
   "You'll have to login/register to edit or see your profile info.":
       "You'll have to login/register to edit or see your profile info.",
@@ -501,4 +501,30 @@ var appStrings = {
   "View More": "View More",
   "Sign up": "Sign up",
   "I agree to": "I agree to",
+  "Tax Number": "Tax Number",
+  "Facebook Link": "Facebook Link",
+  "Twitter Link": "Twitter Link",
+  "Google Link": "Google Link",
+  "Linkedin Link": "Linkedin Link",
+  "Youtube Link": "Youtube Link",
+  "Instagram Link": "Instagram Link",
+  "Dribble Link": "Dribble Link",
+  "Twitch Link": "Twitch Link",
+  "Pinterest Link": "Pinterest Link",
+  "Reddit Link": "Reddit Link",
+  "Enter your tax number": "Enter your tax number",
+  "Please enter a Arabic title": "Please enter a Arabic title",
+  "Arabic Title": "Arabic Title",
+  "House Cleaning Service": "House Cleaning Service",
+  "Repairing Services": "Repairing Services",
+  "Home Shifting Service": "Home Shifting Service",
+  "Get house cleaning services from expert cleaners":
+      "Get house cleaning services from expert cleaners",
+  "Get repaired anything from our thousands of experts":
+      "Get repaired anything from our thousands of experts",
+  "Take our home shifting service to get best service":
+      "Take our home shifting service to get best service",
+  "Language": "Language",
+  "English": "English",
+  "Arabic": "Arabic",
 };

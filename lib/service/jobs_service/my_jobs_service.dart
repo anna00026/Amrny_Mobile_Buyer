@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/model/jobs/job_details_model.dart';
-import 'package:qixer/model/jobs/my_jobs_model.dart';
-import 'package:qixer/service/common_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/model/jobs/job_details_model.dart';
+import 'package:amrny/model/jobs/my_jobs_model.dart';
+import 'package:amrny/service/common_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyJobsService with ChangeNotifier {
@@ -131,6 +131,7 @@ class MyJobsService with ChangeNotifier {
       myJobsListMap.add({
         'id': data[i].id,
         'title': data[i].title,
+        'title_ar': data[i].titleAr,
         'isActive': data[i].isJobOn == 1 ? true : false,
         'price': data[i].price,
         'image': imageList[i],

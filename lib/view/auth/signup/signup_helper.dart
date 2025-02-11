@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
 
-import 'package:qixer/view/auth/login/login.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/view/auth/login/login.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/responsive.dart';
 
 class SignupHelper {
   ConstantColors cc = ConstantColors();

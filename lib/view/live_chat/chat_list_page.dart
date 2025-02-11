@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/live_chat/chat_list_service.dart';
-import 'package:qixer/view/live_chat/chat_message_page.dart';
-import 'package:qixer/view/live_chat/components/chat_search.dart';
-import 'package:qixer/view/utils/common_helper.dart';
-import 'package:qixer/view/utils/constant_colors.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
-import 'package:qixer/view/utils/others_helper.dart';
-import 'package:qixer/view/utils/responsive.dart';
+import 'package:amrny/service/live_chat/chat_list_service.dart';
+import 'package:amrny/view/live_chat/chat_message_page.dart';
+import 'package:amrny/view/live_chat/components/chat_search.dart';
+import 'package:amrny/view/utils/common_helper.dart';
+import 'package:amrny/view/utils/constant_colors.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
+import 'package:amrny/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/responsive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ChatListPage extends StatefulWidget {

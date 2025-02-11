@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../../../../service/serviceby_category_service.dart';
 import '../../../services/service_by_category_page.dart';

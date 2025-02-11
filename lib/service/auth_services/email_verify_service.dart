@@ -4,12 +4,12 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-import 'package:qixer/helper/extension/context_extension.dart';
-import 'package:qixer/helper/extension/string_extension.dart';
-import 'package:qixer/service/auth_services/login_service.dart';
-import 'package:qixer/service/auth_services/reset_password_service.dart';
-import 'package:qixer/service/profile_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/helper/extension/context_extension.dart';
+import 'package:amrny/helper/extension/string_extension.dart';
+import 'package:amrny/service/auth_services/login_service.dart';
+import 'package:amrny/service/auth_services/reset_password_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 
 import '../push_notification_service.dart';
 

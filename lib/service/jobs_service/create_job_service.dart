@@ -2,9 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/all_services_service.dart';
-import 'package:qixer/service/jobs_service/my_jobs_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/all_services_service.dart';
+import 'package:amrny/service/jobs_service/my_jobs_service.dart';
+import 'package:amrny/service/profile_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../dropdowns_services/area_dropdown_service.dart';
@@ -31,6 +32,7 @@ class CreateJobService with ChangeNotifier {
 
   Future<bool> createJob(BuildContext context,
       {required title,
+      required titleAr,
       required desc,
       required onlineOrOffline,
       required price,
@@ -42,15 +44,10 @@ class CreateJobService with ChangeNotifier {
     var selectedSubCategoryId =
         Provider.of<AllServicesService>(context, listen: false)
             .selectedSubcatId;
-
-    var selectedCountryId =
-        Provider.of<CountryDropdownService>(context, listen: false)
-            .selectedCountryId;
+    String? selectedCountryId = defaultCountryId;
     var selectedStateId =
-        Provider.of<StateDropdownService>(context, listen: false)
-            .selectedStateId;
-    var selectedAreaId =
-        Provider.of<AreaDropdownService>(context, listen: false).selectedAreaId;
+        Provider.of<ProfileService>(context, listen: false)
+            .profileDetails.userDetails.city.id;
 
     if (pickedImage == null) {
       OthersHelper()
@@ -82,6 +79,7 @@ class CreateJobService with ChangeNotifier {
       'country_id': selectedCountryId,
       'city_id': selectedStateId,
       'title': title,
+      'title_ar': titleAr,
       'description': desc,
       'is_job_online': isOnline,
       'price': price,

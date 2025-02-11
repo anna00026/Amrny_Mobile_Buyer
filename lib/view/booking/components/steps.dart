@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/book_steps_service.dart';
-import 'package:qixer/service/booking_services/book_service.dart';
-import 'package:qixer/view/utils/others_helper.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/book_steps_service.dart';
+import 'package:amrny/service/booking_services/book_service.dart';
+import 'package:amrny/view/utils/others_helper.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '../../utils/common_helper.dart';

@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qixer/service/app_string_service.dart';
-import 'package:qixer/service/book_confirmation_service.dart';
-import 'package:qixer/service/booking_services/personalization_service.dart';
-import 'package:qixer/service/jobs_service/job_request_service.dart';
-import 'package:qixer/service/order_details_service.dart';
-import 'package:qixer/view/booking/booking_helper.dart';
-import 'package:qixer/view/utils/constant_styles.dart';
+import 'package:amrny/service/app_string_service.dart';
+import 'package:amrny/service/book_confirmation_service.dart';
+import 'package:amrny/service/booking_services/personalization_service.dart';
+import 'package:amrny/service/jobs_service/job_request_service.dart';
+import 'package:amrny/service/order_details_service.dart';
+import 'package:amrny/view/booking/booking_helper.dart';
+import 'package:amrny/view/utils/constant_styles.dart';
 
 class TotalPayable extends StatelessWidget {
   const TotalPayable(
@@ -40,11 +40,13 @@ class TotalPayable extends StatelessWidget {
                             .selectedJobPrice;
                       } else {
                         if (pProvider.isOnline == 0) {
-                          price = bcProvider.totalPriceAfterAllcalculation
+                          price = bcProvider
+                              .calculateSubtotal(
+                                  pProvider.includedList, pProvider.extrasList)
                               .toStringAsFixed(2);
                         } else {
                           price = bcProvider
-                              .totalPriceOnlineServiceAfterAllCalculation
+                              .calculateSubtotalForOnline(pProvider.extrasList)
                               .toStringAsFixed(2);
                         }
                       }
